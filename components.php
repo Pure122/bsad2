@@ -1,6 +1,6 @@
-<?
-function header(){
-    $header = '<header class="header-top-strip py-3">
+<?php
+function navhead(){
+    $navh = '<header class="header-top-strip py-3">
     <div class="container-xxl">
       <div class="row">
         <div class="col-1">
@@ -57,43 +57,56 @@ function header(){
       </div>
     </div>
   </header>';
-echo $header;
+echo $navh;
 }
 function footer(){
-    $footer = "<div class='py-4'></div>
-    <div class='footer py-4'>
-      <div class='container-xxl'>
-        <div class='row'>
-          <div class='col-3'>
-            <h4 class='text-white mb-4'>Contact us</h4>
-            <div></div>
-          </div>
-          <div class='col-3'>
-            <h4 class='text-white mb-4'>Inform</h4>
-            <div></div>
-          </div>
-          <div class='col-3'>
-            <h4 class='text-white mb-4'>Account</h4>
-            <div></div>
-          </div>
-          <div class='col-3'>
-            <h4 class='text-white mb-4'>Links</h4>
-            <div></div>
-          </div>
-        </div>
+    $footer = "<footer class='py-4'></footer>
+<footer class='py-4'>
+  <div class='container-xxl'>
+    <div class='row'>
+      <div class='col-3'>
+        <h4 class='text-white mb-4'>Contact us</h4>
+        <div></div>
+      </div>
+      <div class='col-3'>
+        <h4 class='text-white mb-4'>Inform</h4>
+        <div></div>
+      </div>
+      <div class='col-3'>
+        <h4 class='text-white mb-4'>Account</h4>
+        <div></div>
+      </div>
+      <div class='col-3'>
+        <h4 class='text-white mb-4'>Links</h4>
+        <div></div>
       </div>
     </div>
-    <div class='py-4'>
-      <div class='container-xxl'>
-        <div class='row'>
-          <div class='col-12'>
-            <p class='text-center mb-0 text-white'>&copy ; {new Date().getFullYear()}; Powered by Pure</p>
-          </div>
-        </div>
+  </div>
+</footer>
+<footer class='py-4'>
+  <div class='container-xxl'>
+    <div class='row'>
+      <div class='col-12'>
+        <p class='text-center mb-0 text-white'>&copy ; {new Date().getFullYear()}; Powered by Pure</p>
       </div>
-    </div>";
+    </div>
+  </div>
+</footer>";
     echo $footer;
 }
-
-
+function prodcard(){
+  $prod = '    <div class="col-3 my-3">
+  <div class="product-card">
+      <div class="product-image">
+          <img class="img-fluid" src="picture/elden.webp"/>
+      </div>
+      <div class="product-details pt-3">
+          <h6>Elden Ring</h6>
+          <h5 class="product-title">Game of the year 2022</h5>
+          <p class="price">Price 59.99$</p>
+      </div>
+  </div>
+</div>';
+echo $prod;
+}
 ?>
