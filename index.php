@@ -78,10 +78,13 @@ navhead();
           <h3 class='text-white'>Recommended</h3>
         </div>
 <?php
-prodcard();
-prodcard();
-prodcard();
-prodcard();
+
+  $query = "SELECT * FROM Products ORDER BY Prod_Name ASC limit 4";
+  $ret = $db->query($query);
+  while($row = $ret->fetchArray(SQLITE3_ASSOC)){
+    prodcard($row['Prod_Name'],$row['Prod_Desc'],$row['Prod_Price'],$row['ProdID'],$row['Prod_Mainpic']);
+  }
+
 ?>
       </div>
     </div>

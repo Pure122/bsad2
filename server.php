@@ -3,7 +3,7 @@
    {
       function __construct()
       {
-         $this->open('register.db');
+         $this->open('Products.db');
       }
    }
    $db = new MyDB();

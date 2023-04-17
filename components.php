@@ -153,20 +153,22 @@ function footer(){
 </footer>";
     echo $footer;
 }
-function prodcard(){
+function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic){
+      floatval(preg_replace('/[^\d.],/', '', '"'.$cardprice.'"'));
+    $cardprice = number_format($cardprice,2);
   $prod = '    <div class="col-3 my-3">
   <form action="" method="POST">
   <div class="product-card">
       <div class="product-image">
-          <img class="img-fluid" src="picture/elden.webp"/>
+          <a href="prop.php?idg=' . $cardid . '"><img class="img-fluid" src="'.$cardpic.'"/></a>
       </div>
       <div class="product-details mt-2">
-          <h6 class="product-name mt-2">Elden Ring</h6>
-          <h5 class="product-title">Game of the year 2022</h5>
+          <h6 class="product-name mt-2">'.$cardname.'</h6>
+          <h5 class="product-title">'.$carddesc.'</h5>
           
-          <p class="price m-0">Price 59.99$</p>
+          <p class="price m-0">'.$cardprice.' Bath</p>
           <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
-          <input type="hidden" name="cardid" value="s">
+          <input type="hidden" name="cardid" value="'.$cardid.'">
       </div>
   </div>
   </form>
