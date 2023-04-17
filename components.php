@@ -32,7 +32,7 @@ function navhead(){
           <p class="text-white text-end mb-0">status</p>
         </div>
         <div class="col-3">
-          <p class="text-white text-end mb-0">'.$_SESSION['username'].'   <a href="index.php?logout="1"">Logout</a></p>
+          <p class="text-white text-end mb-0"><i class="bi bi-person-circle"></i> '.$_SESSION['username'].'   <a href="index.php?logout="1"">Logout</a></p>
         </div>
       </div>
     </div>
