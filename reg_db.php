@@ -35,7 +35,9 @@ if (isset($_POST['register'])){
         header('location:index.php');
     }
     else{
-        echo '<p></p>Username is already exist <a href="login.php">Login</a></p>';
+        array_push($error,'User name already exist');
+        $_SESSION['error'] = 'User name already exist';
+        header('location:reg.php');
     }
 }
 

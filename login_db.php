@@ -20,6 +20,8 @@ if ($row){
 } 
 else{
     array_push($error,'Wrong username/password combination');
-    echo '<p></p>Wrong username/password combination <a href="login.php">Login</a></p>';
+    $_SESSION['error'] = 'Wrong username/password combination';
+    header('location:login.php');
+    
 }
 ?>

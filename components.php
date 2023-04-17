@@ -5,7 +5,7 @@ function navhead(){
     <div class="container-xxl">
       <div class="row">
         <div class="col-1">
-          <p class="text-white text-end mb-0">Logo</p>
+          <p class="text-white text-end mb-0"><a href="index.php">Logo</a></p>
         </div>
         <div class="col-2">
           <div class="dropdown">
@@ -62,7 +62,7 @@ function navhead(){
     <div class="container-xxl">
       <div class="row">
         <div class="col-1">
-          <p class="text-white text-end mb-0">Logo</p>
+          <p class="text-white text-end mb-0"><a href="index.php">Logo</a></p>
         </div>
         <div class="col-2">
           <div class="dropdown">

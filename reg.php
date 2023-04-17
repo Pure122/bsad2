@@ -1,5 +1,6 @@
 <?php
 require_once('components.php');
+session_start();
 ?>
 <html lang="en">
 <head>
@@ -48,6 +49,16 @@ require_once('components.php');
             <label for="password" class="form-label text-white">Confirm Password</label>
             
         </div>
+        <div class="error">
+                <h3 class="text-danger mb-4">
+                    <?php
+                    if(isset($_SESSION['error'])){
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
+                    }
+                    ?>
+                </h3>
+            </div>
         <button type='submit' name="register" class='btn btn-primary btn-block mb-4'>Register</button>
         <div class="text-center">
         <p class="text-white">Already a member? <a href="login.php">Sign in</a></p>
