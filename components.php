@@ -146,7 +146,7 @@ function footer(){
   <div class='container-xxl'>
     <div class='row'>
       <div class='col-12'>
-        <p class='text-center mb-0 text-white'>&copy ; {new Date().getFullYear()}; Powered by Pure</p>
+        <p class='text-center mb-0 text-white'>&copy ; 2023; Powered by Pure</p>
       </div>
     </div>
   </div>
