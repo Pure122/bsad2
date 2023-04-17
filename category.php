@@ -42,13 +42,40 @@ navhead();
     <div class="container-xxl">
       <div class="row">
         <div class="col-12">
-          <h3 class='text-white'>Recommended</h3>
+          
         </div>
 <?php
-prodcard();
-prodcard();
-prodcard();
-prodcard();
+
+  if(isset($_GET['cat'])){
+    $cate = $_GET['cat'];
+    if($cate == 'all'){
+    $query = "SELECT * FROM Products";
+  }
+  else{
+    $query = "SELECT * FROM Products where Prod_Category = '$cate'";
+  }
+  }
+  
+  elseif(isset($_GET['search'])){
+    $search = $_GET['search'];
+    $query = "SELECT * from Products where Prod_Name like '%$search%'";
+   }
+
+
+  $ret = $db->query($query);
+  $numrow = 0;
+    while($row = $ret->fetchArray(SQLITE3_ASSOC)){
+    prodcard($row['Prod_Name'],$row['Prod_Desc'],$row['Prod_Price'],$row['ProdID'],$row['Prod_Mainpic']);
+    $numrow++;
+  }
+
+  if($numrow == 0){
+    echo '<div class="py-5 text-center">
+
+    <h1 class="text-danger">Can\'t find product</h1>
+
+    </div>';
+  }
 ?>
       </div>
     </div>

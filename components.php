@@ -13,9 +13,11 @@ function navhead(){
               Dropdown button
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item text-white">All</a></li>
-              <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-              <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+              <li><a class="dropdown-item text-white" href="category.php?cat=all">All</a></li>
+              <li><a class="dropdown-item text-white" href="category.php?cat=Nintendo">Nintendo</a></li>
+              <li><a class="dropdown-item text-white" href="category.php?cat=PC">PC</a></li>
+              <li><a class="dropdown-item text-white" href="category.php?cat=PlayStation">Playstation</a></li>
+              <li><a class="dropdown-item text-white" href="category.php?cat=Xbox">Xbox</a></li>
             </ul>
           </div>
         </div>
@@ -42,17 +44,19 @@ function navhead(){
       <div class="row align-items-center">
         <div class="col-7"></div>
         <div class="col-5">
-          <div class="input-group">
-            <input type="text"
+        <form action="category.php" method="GET">
+        <div class="input-group">
+            <input type="text" name="search"
               class="form-control py-2"
               placeholder="Search....."
               aria-label="Search....."
               aria-describedby="basic-addon2" />
             <span class="input-group-text p-3" id="basic-addon2">
-            <i class="bi bi-search"></i>
+            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
             </span>
 
           </div>
+        </form>
         </div>
 
       </div>
@@ -70,9 +74,11 @@ function navhead(){
               Dropdown button
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item text-white">All</a></li>
-              <li><a class="dropdown-item text-white" href="#">Another action</a></li>
-              <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+            <li><a class="dropdown-item text-white" href="category.php?cat=all">All</a></li>
+            <li><a class="dropdown-item text-white" href="category.php?cat=Nintendo">Nintendo</a></li>
+            <li><a class="dropdown-item text-white" href="category.php?cat=PC">PC</a></li>
+            <li><a class="dropdown-item text-white" href="category.php?cat=PlayStation">Playstation</a></li>
+            <li><a class="dropdown-item text-white" href="category.php?cat=Xbox">Xbox</a></li>
             </ul>
           </div>
         </div>
@@ -99,17 +105,20 @@ function navhead(){
       <div class="row align-items-center">
         <div class="col-7"></div>
         <div class="col-5">
-          <div class="input-group">
-            <input type="text"
+        <form action="category.php" method="GET">
+        <div class="input-group">
+            <input type="text" name="search"
               class="form-control py-2"
               placeholder="Search....."
               aria-label="Search....."
               aria-describedby="basic-addon2" />
             <span class="input-group-text p-3" id="basic-addon2">
-            <i class="bi bi-search"></i>
+            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
             </span>
 
           </div>
+        </form>
+          
         </div>
 
       </div>
