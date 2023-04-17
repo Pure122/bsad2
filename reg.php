@@ -40,12 +40,12 @@ session_start();
             
         </div>
         <div class="form-outline mb-4">
-            <input type="text" name="password" required="Password is required" class="form-control">
+            <input type="password" name="password" required="Password is required" class="form-control">
             <label for="password" class="form-label text-white">Password</label>
             
         </div>
         <div class="form-outline mb-4">
-            <input type="text" name="password2" required="Password is required" class="form-control">
+            <input type="password" name="password2" required="Password is required" class="form-control">
             <label for="password" class="form-label text-white">Confirm Password</label>
             
         </div>

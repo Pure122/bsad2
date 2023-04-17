@@ -13,7 +13,7 @@ function navhead(){
               Dropdown button
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item text-white">All</Link></li>
+              <li><a class="dropdown-item text-white">All</a></li>
               <li><a class="dropdown-item text-white" href="#">Another action</a></li>
               <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
             </ul>
@@ -70,7 +70,7 @@ function navhead(){
               Dropdown button
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item text-white">All</Link></li>
+              <li><a class="dropdown-item text-white">All</a></li>
               <li><a class="dropdown-item text-white" href="#">Another action</a></li>
               <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
             </ul>
