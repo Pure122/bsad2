@@ -44,6 +44,9 @@ navhead();
 <h3 class="mb-4">ข้อมูลผู้ใช้</h3>
 <h3 class="mb-4">Username : <?php echo $_SESSION['username'] ;?></h3>
 <h3 class="mb-4">Role : <?php echo $_SESSION['role'] ;?></h3>
+<?php if ($_SESSION['role'] == 'admin'){
+  echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage member</a>';
+} ;?>
         </div>
         <div class="col-7">
             <div class="row mx-4 mb-4 bg-white rounded p-5">
