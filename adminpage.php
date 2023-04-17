@@ -41,7 +41,7 @@ session_start();
   } else {
     echo '<section class="home-wrapper-1 py-5">
       <div class="container-xxl">
-          <div class="row h-75 text-center">
+          <div class="row text-center mb-5">
           <div class="col-12">
           <h3 class="text-white">All member</h3>
           <table class="table bg-white">
@@ -62,10 +62,24 @@ session_start();
     echo '</table>
     </div>
       </div>
+      <div class="row h-25">
+      <form action="" method="POST">
+      <div class="form-outline mb-4">
+          <input type="text" name="removemem" required="ID is required" class="form-control">
+          <label class="form-label text-white" for="removemem">Remove Member By ID</label>
+          
+      </div>
+      <button type="submit" name="removemember" class="btn btn-danger btn-block">Remove</button>
+      </form>
+      </div>
   </div>
         </section>';
   }
-
+  if (isset($_POST['removemember'])){
+    $idremove = $_POST['removemem'];
+    $query = "DELETE FROM registersys WHERE id = '$idremove'";
+    $db->exec($query);
+}
   ?>
 
   <?php
