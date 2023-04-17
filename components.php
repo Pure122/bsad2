@@ -155,16 +155,21 @@ function footer(){
 }
 function prodcard(){
   $prod = '    <div class="col-3 my-3">
+  <form action="" method="POST">
   <div class="product-card">
       <div class="product-image">
           <img class="img-fluid" src="picture/elden.webp"/>
       </div>
-      <div class="product-details pt-3">
-          <h6>Elden Ring</h6>
+      <div class="product-details mt-2">
+          <h6 class="product-name mt-2">Elden Ring</h6>
           <h5 class="product-title">Game of the year 2022</h5>
-          <p class="price">Price 59.99$</p>
+          
+          <p class="price m-0">Price 59.99$</p>
+          <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
+          <input type="hidden" name="cardid" value="s">
       </div>
   </div>
+  </form>
 </div>';
 echo $prod;
 }

@@ -78,8 +78,10 @@
   margin: auto;
   display: block;
    }
+
    .product-card .product-details {
     overflow: hidden;
+    border-top: 1px solid var(--color-3b4149)
   }
    
   .product-card .product-details h6{
@@ -95,6 +97,20 @@
     font-size: 16px;
   }
   
+  .product-name{
+    -webkit-line-clamp: 2;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+  .product-title{
+    -webkit-line-clamp: 2;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
   .rec-wrapper{
     background-color: var(--color-131921);
   }
