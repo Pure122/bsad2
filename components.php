@@ -162,8 +162,8 @@ function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic){
       <div class="product-image">
           <a href="prop.php?idg=' . $cardid . '"><img class="img-fluid" src="'.$cardpic.'"/></a>
       </div>
-      <div class="product-details mt-2">
-          <h6 class="product-name mt-2">'.$cardname.'</h6>
+      <div class="product-details my-4">
+          <h6 class="product-name">'.$cardname.'</h6>
           <h5 class="product-title">'.$carddesc.'</h5>
           
           <p class="price m-0">'.$cardprice.' Bath</p>
