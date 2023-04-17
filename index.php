@@ -1,5 +1,16 @@
 <?php
 require_once('components.php');
+include('server.php');
+session_start();
+if (!isset($_SESSION['username'])){
+  $_SESSION['regmsg'] = 'You must log in first';
+  
+}
+if (isset($_GET['logout'])){
+  session_destroy();
+  unset($_SESSION['username']);
+  
+}
 ?>
 <html lang="en">
 
