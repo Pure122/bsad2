@@ -98,4 +98,9 @@
   .rec-wrapper{
     background-color: var(--color-131921);
   }
+
+  .account-page{
+    border-radius: 10px;
+    background-color: white;
+  }
   /*Home end*/

@@ -32,7 +32,7 @@ function navhead(){
           <p class="text-white text-end mb-0">status</p>
         </div>
         <div class="col-3">
-          <p class="text-white text-end mb-0"><i class="bi bi-person-circle"></i> '.$_SESSION['username'].'   <a href="index.php?logout="1"">Logout</a></p>
+          <p class="text-white text-end mb-0"><a href="account.php" ><i class="bi bi-person-circle"></i></a> '.$_SESSION['username'].'   <a href="index.php?logout="1"">Logout</a></p>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@ function navhead(){
               aria-label="Search....."
               aria-describedby="basic-addon2" />
             <span class="input-group-text p-3" id="basic-addon2">
-              <BsSearch class="fs-5" />
+            <i class="bi bi-search"></i>
             </span>
 
           </div>
@@ -106,7 +106,7 @@ function navhead(){
               aria-label="Search....."
               aria-describedby="basic-addon2" />
             <span class="input-group-text p-3" id="basic-addon2">
-              <BsSearch class="fs-5" />
+            <i class="bi bi-search"></i>
             </span>
 
           </div>

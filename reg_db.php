@@ -12,6 +12,7 @@ if (isset($_POST['register'])){
 
     if ($password != $password2){
         array_push($error,'Password not match');
+        
     }
 
     $user_check = "SELECT * FROM registersys WHERE username = '$username' or email = '$email'";
@@ -27,16 +28,17 @@ if (isset($_POST['register'])){
         }
     }
     if (count($error) == 0){
-        $sqlinsert = "INSERT INTO registersys (username, email, password) VALUES ('$username','$email','$password')";
+        $sqlinsert = "INSERT INTO registersys (username, email, password ,role) VALUES ('$username','$email','$password','customer')";
         $db->exec($sqlinsert);
 
+        $_SESSION['role'] = 'customer';
         $_SESSION['username'] = $username;
         $_SESSION['success'] = 'You are now logged in';
         header('location:index.php');
     }
     else{
         array_push($error,'User name already exist');
-        $_SESSION['error'] = 'User name already exist';
+        $_SESSION['error'] = 'User name already exist or Password does not match';
         header('location:reg.php');
     }
 }
