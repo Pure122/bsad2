@@ -2,6 +2,7 @@
 require_once('components.php');
 include('server.php');
 session_start();
+$username = $_SESSION["username"];
 if (!isset($_SESSION['username'])){
   $_SESSION['regmsg'] = 'You must log in first';
   
@@ -49,6 +50,7 @@ $sql ="SELECT * from Products WHERE ProdID = $getid";
 $ret = $db->query($sql);
 while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
     $inpic = array($row['Prod_Pic1'],$row['Prod_Pic2'],$row['Prod_Pic3'],$row['Prod_Pic4']);
+    $product_id = $row['ProdID'];
     $gamename = $row['Prod_Name'];
     $gamedesc = $row['Prod_Desc'];
     $gameprice = $row['Prod_Price'];
@@ -111,6 +113,13 @@ echo '</div>';
     </div>
     <div class="col-12">
     <h1 class="text-white"><?=$gameprice?> Bath</h1>
+    <form method="post" action="add_to_cart.php">
+      <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+      <input type="hidden" name="game_name" value="<?php echo $gamename; ?>">
+      <input type="hidden" name="game_price" value="<?php echo $gameprice; ?>">
+      <input type="hidden" name="username" value="<?php echo $username; ?>">
+      <button type="submit" name="add_to_cart">Add to Cart</button>
+    </form>
     </div>
   </div>
 </div>

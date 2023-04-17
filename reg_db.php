@@ -28,7 +28,7 @@ if (isset($_POST['register'])){
         }
     }
     if (count($error) == 0){
-        $sqlinsert = "INSERT INTO registersys (username, email, password ,role) VALUES ('$username','$email','$password','customer')";
+        $sqlinsert = "INSERT INTO register (username, email, password ,role) VALUES ('$username','$email','$password','customer')";
         $db->exec($sqlinsert);
 
         $_SESSION['role'] = 'customer';
