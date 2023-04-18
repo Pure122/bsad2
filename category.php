@@ -10,6 +10,30 @@ if (isset($_GET['logout'])){
   session_destroy();
   unset($_SESSION['username']);
   
+  
+}
+if(isset($_POST['add'])){
+  if(isset($_SESSION['cart'])){
+    $itme_array_id = array_column($_SESSION['cart'],"cardid"); 
+    if(in_array($_POST['cardid'],$itme_array_id)){
+      $indexa = array_search($_POST['cardid'],$itme_array_id);
+       $_SESSION['cart'][$indexa]['qty'] +=$_POST['qty'];
+    }
+    else{
+    $item_array = array(
+      'cardid'=>$_POST['cardid'],
+      'qty' => $_POST['qty']
+    );
+    $_SESSION['cart'][] = $item_array;
+    }
+  }else{
+    $item_array = array(
+      'cardid'=>$_POST['cardid'],
+      'qty' => $_POST['qty']
+    );
+    $_SESSION['cart'][0] = $item_array;
+ 
+   }
 }
 ?>
 <html lang="en">
@@ -65,7 +89,7 @@ navhead();
   $ret = $db->query($query);
   $numrow = 0;
     while($row = $ret->fetchArray(SQLITE3_ASSOC)){
-    prodcard($row['Prod_Name'],$row['Prod_Desc'],$row['Prod_Price'],$row['ProdID'],$row['Prod_Mainpic']);
+    prodcard($row['Prod_Name'],$row['Prod_Desc'],$row['Prod_Price'],$row['ProdID'],$row['Prod_Mainpic'],$row['Prod_Quantity']);
     $numrow++;
   }
 

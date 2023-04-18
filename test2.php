@@ -12,28 +12,8 @@ if (isset($_GET['logout'])){
   
 }
 if(isset($_POST['add'])){
-  if(isset($_SESSION['cart'])){
-    $itme_array_id = array_column($_SESSION['cart'],"cardid"); 
-    if(in_array($_POST['cardid'],$itme_array_id)){
-      $indexa = array_search($_POST['cardid'],$itme_array_id);
-       $_SESSION['cart'][$indexa]['qty'] +=$_POST['qty'];
-    }
-    else{
-    $item_array = array(
-      'cardid'=>$_POST['cardid'],
-      'qty' => $_POST['qty']
-    );
-    $_SESSION['cart'][] = $item_array;
-    }
-  }else{
-    $item_array = array(
-      'cardid'=>$_POST['cardid'],
-      'qty' => $_POST['qty']
-    );
-    $_SESSION['cart'][0] = $item_array;
- 
-   }
-}
+    echo '<p text-dark>'.$_POST['cardid'].'and'.$_POST['qty'].'</p>';
+  }
 ?>
 <html lang="en">
 
@@ -57,10 +37,7 @@ if(isset($_POST['add'])){
 
 <body>
 
-<?php
-navhead();
-?>
-      <section class="rec-wrapper py-5 home-wrapper-2">
+      
     <div class="container-xxl">
       <div class="row">
         <div class="col-8">
@@ -72,7 +49,6 @@ $sql ="SELECT * from Products WHERE ProdID = $getid";
 $ret = $db->query($sql);
 while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
     $inpic = array($row['Prod_Pic1'],$row['Prod_Pic2'],$row['Prod_Pic3'],$row['Prod_Pic4']);
-    $gamepid = $row['ProdID'];
     $gamename = $row['Prod_Name'];
     $gamedesc = $row['Prod_Desc'];
     $gameprice = $row['Prod_Price'];
@@ -135,11 +111,11 @@ echo '</div>';
       <h3 class="text-white">Platform - <?=$gamecate?></h3>
     </div>
     <div class="col-12">
-    <h1 class="text-white"><?=$gameprice?> Baht</h1>
+    <h1 class="text-white"><?=$gameprice?> Bath</h1>
     <form action="" method="POST">
     <input type="number" name="qty" value="1" max="<?=$gameqt?>">
     <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
-          <input type="hidden" name="cardid" value="<?=$gamepid?>">
+          <input type="hidden" name="cardid" value="<?=$idg?>">
     </form>
     </div>
   </div>
@@ -155,10 +131,8 @@ echo '</div>';
         </div>
       </div>
     </div>
-      </section>
-<?php
-footer();
-?>
+      
+
 
 
     

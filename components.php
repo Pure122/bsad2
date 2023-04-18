@@ -25,7 +25,7 @@ function navhead(){
           <p class="text-white text-end mb-0">Upgrade</p>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">cart</p>
+          <a href="cart.php" class="text-white text-end mb-0">cart</a>
         </div>
         <div class="col">
           <p class="text-white text-end mb-0">transfer</p>
@@ -162,7 +162,7 @@ function footer(){
 </footer>";
     echo $footer;
 }
-function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic){
+function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic,$cardqty){
       floatval(preg_replace('/[^\d.],/', '', '"'.$cardprice.'"'));
     $cardprice = number_format($cardprice,2);
   $prod = '    <div class="col-3 my-3">
@@ -175,7 +175,8 @@ function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic){
           <h6 class="product-name">'.$cardname.'</h6>
           <h5 class="product-title">'.$carddesc.'</h5>
           
-          <p class="price m-0">'.$cardprice.' Bath</p>
+          <p class="price m-0">'.$cardprice.' Baht</p>
+          <input type="number" name="qty" value="1" max="'.$cardqty.'">
           <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
           <input type="hidden" name="cardid" value="'.$cardid.'">
       </div>
