@@ -68,38 +68,36 @@ navhead();
         <div class="col-12">
           
         </div>
-<?php
-
-  if(isset($_GET['cat'])){
-    $cate = $_GET['cat'];
-    if($cate == 'all'){
-    $query = "SELECT * FROM Products";
-  }
-  else{
-    $query = "SELECT * FROM Products where Prod_Category = '$cate'";
-  }
-  }
-  
-  elseif(isset($_GET['search'])){
-    $search = $_GET['search'];
-    $query = "SELECT * from Products where Prod_Name like '%$search%'";
-   }
-
-
-  $ret = $db->query($query);
-  $numrow = 0;
+  <?php
+    if(isset($_GET['cat'])){
+      $cate = $_GET['cat'];
+      if($cate == 'all'){
+        echo '<h1 style="color: white;">All Products</h1>';
+        $query = "SELECT * FROM Products";
+      }
+      else{
+        echo '<h1 style="color: white;">Products in category: '.$cate.'</h1>';
+        $query = "SELECT * FROM Products where Prod_Category = '$cate'";
+      }
+    }
+    elseif(isset($_GET['search'])){
+      $search = $_GET['search'];
+      echo '<h1 style="color: white;">Search results for: '.$search.'</h1>';
+      $query = "SELECT * from Products where Prod_Name like '%$search%'";
+    }
+    
+    $ret = $db->query($query);
+    $numrow = 0;
     while($row = $ret->fetchArray(SQLITE3_ASSOC)){
-    prodcard($row['Prod_Name'],$row['Prod_Desc'],$row['Prod_Price'],$row['ProdID'],$row['Prod_Mainpic'],$row['Prod_Quantity']);
-    $numrow++;
-  }
+      prodcard($row['Prod_Name'],$row['Prod_Desc'],$row['Prod_Price'],$row['ProdID'],$row['Prod_Mainpic'],$row['Prod_Quantity']);
+      $numrow++;
+    }
 
-  if($numrow == 0){
-    echo '<div class="py-5 text-center">
-
-    <h1 class="text-danger">Can\'t find product</h1>
-
-    </div>';
-  }
+    if($numrow == 0){
+      echo '<div class="py-5 text-center">
+        <h1 class="text-danger">Can\'t find product</h1>
+      </div>';
+    }
 ?>
       </div>
     </div>
