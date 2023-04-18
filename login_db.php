@@ -14,6 +14,7 @@ if (count($error) == 0){
 }
 
 if ($row){
+    $_SESSION['userid'] = $row['id'];
     $_SESSION['role'] = $row['role'];
     $_SESSION['username'] = $username;
     $_SESSION['tier'] = $row['tier'];

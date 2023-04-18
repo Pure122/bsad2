@@ -30,12 +30,7 @@ if (isset($_POST['register'])){
     if (count($error) == 0){
         $sqlinsert = "INSERT INTO registersys (username, email, password ,role,tier) VALUES ('$username','$email','$password','customer','standard')";
         $db->exec($sqlinsert);
-
-        $_SESSION['tier'] = 'standard';
-        $_SESSION['role'] = 'customer';
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = 'You are now logged in';
-        header('location:index.php');
+        header('location:login.php');
     }
     else{
         array_push($error,'User name already exist');

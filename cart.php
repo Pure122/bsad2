@@ -104,6 +104,13 @@ if(isset($_POST['remove'])){
                 </tr>
                 
                 </table>
+                <div class="row">
+
+                <form action="order.php" method="post" class="cart-item">
+                <button type="submit" name="createpo" class="btn btn-danger" value="'.$_SESSION['userid'].'">Create Order</button>
+                </form>
+
+                </div>
                 </div>
                   </div>
               </div>

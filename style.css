@@ -53,6 +53,7 @@
   
   .home-wrapper-1{
     background-color: var(--color-131921);
+    min-height: 80vh;
   }
   
   .card-wrapper{

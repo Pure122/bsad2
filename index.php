@@ -11,6 +11,29 @@ if (isset($_GET['logout'])){
   unset($_SESSION['username']);
   
 }
+if(isset($_POST['add'])){
+  if(isset($_SESSION['cart'])){
+    $itme_array_id = array_column($_SESSION['cart'],"cardid"); 
+    if(in_array($_POST['cardid'],$itme_array_id)){
+      $indexa = array_search($_POST['cardid'],$itme_array_id);
+       $_SESSION['cart'][$indexa]['qty'] +=$_POST['qty'];
+    }
+    else{
+    $item_array = array(
+      'cardid'=>$_POST['cardid'],
+      'qty' => $_POST['qty']
+    );
+    $_SESSION['cart'][] = $item_array;
+    }
+  }else{
+    $item_array = array(
+      'cardid'=>$_POST['cardid'],
+      'qty' => $_POST['qty']
+    );
+    $_SESSION['cart'][0] = $item_array;
+ 
+   }
+}
 ?>
 <html lang="en">
 

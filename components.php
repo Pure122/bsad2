@@ -28,7 +28,7 @@ function navhead(){
           <a href="cart.php" class="text-white text-end mb-0">Cart</a>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">transfer</p>
+        <a href="order.php" class="text-white text-end mb-0">Order</a>
         </div>
         <div class="col">
           <p class="text-white text-end mb-0">status</p>
@@ -89,7 +89,7 @@ function navhead(){
         <a href="cart.php" class="text-white text-end mb-0">Cart</a>
         </div>
         <div class="col">
-          <a class="text-white text-end mb-0">transfer</a>
+          <a href="order.php" class="text-white text-end mb-0">Order</a>
         </div>
         <div class="col">
           <a class="text-white text-end mb-0">status</a>
