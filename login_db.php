@@ -16,6 +16,7 @@ if (count($error) == 0){
 if ($row){
     $_SESSION['role'] = $row['role'];
     $_SESSION['username'] = $username;
+    $_SESSION['tier'] = $row['tier'];
     $_SESSION['success'] = 'You are now logged in';
     header('location:index.php');
 } 

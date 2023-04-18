@@ -42,6 +42,7 @@ if(isset($_POST['remove'])){
 
           if(isset($_SESSION['cart'])){
             $cardidcart = array_column($_SESSION['cart'],'cardid');
+            $totalqty = 0;
             $totalprice = 0;
         }
           if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
@@ -49,7 +50,7 @@ if(isset($_POST['remove'])){
             <div class="container-xxl">
                 <div class="row text-center mb-5">
                 <div class="col-12">
-                <h3 class="text-white">All member</h3>
+                <h3 class="text-white">Your Cart Item</h3>
                 <table class="table bg-white">
                 <tr>
                   <th>Product</th>
@@ -69,6 +70,7 @@ if(isset($_POST['remove'])){
                   
                     floatval(preg_replace('/[^\d.],/', '', '"'.$row['Prod_Price'].'"'));
                     $nowprice = $fprice*$cprice;
+                    $totalqty += $cprice;
                     $totalprice += $nowprice;              
                           echo '
                           <tr>
@@ -84,7 +86,14 @@ if(isset($_POST['remove'])){
                 }
             }
             }
-                echo '</table>
+            
+                echo '<tr>
+                <td colspan="2" style="text-align:right;">Total</td>
+                <td> '.$totalqty.'</td>
+                <td>'.number_format($totalprice,2).'</td>
+                </tr>
+                
+                </table>
                 </div>
                   </div>
               </div>

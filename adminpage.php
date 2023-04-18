@@ -49,6 +49,7 @@ session_start();
             <th>id</th>
             <th>username</th>
             <th>email</th>
+            <th>tier</th>
           </tr>';
     $query = "SELECT * FROM registersys WHERE role = 'customer'";
     $ret = $db->query($query);
@@ -57,12 +58,14 @@ session_start();
       <td>'.$row['id'].'</td>
       <td>'.$row['username'].'</td>
       <td>'.$row['email'].'</td>
+      <td>'.$row['tier'].'</td>
     </tr>';
     }
     echo '</table>
     </div>
       </div>
-      <div class="row h-25">
+      <div class="row">
+      <div class="col-4">
       <form action="" method="POST">
       <div class="form-outline mb-4">
           <input type="text" name="removemem" required="ID is required" class="form-control">
@@ -72,6 +75,26 @@ session_start();
       <button type="submit" name="removemember" class="btn btn-danger btn-block">Remove</button>
       </form>
       </div>
+
+
+      <div class="col-4">
+      <form action="" method="POST">
+      <div class="form-outline mb-4">
+          <input type="text" name="memupdate" required="ID is required" class="form-control">
+          <label class="form-label text-white" for="updaterole">Update Customer tier By ID</label>
+          <select class="form-select form-select-lg my-5" aria-label=".form-select-lg example" name="selecttier">
+  <option selected>Select Tier</option>
+  <option value="standard">No Tier</option>
+  <option value="silver">Silver Tier</option>
+  <option value="gold">Gold Tier</option>
+  <option value="platinum">Platinum Tier</option>
+</select>
+          
+      </div>
+      <button type="submit" name="updaterole" class="btn btn-danger btn-block">Update</button>
+      </form>
+      </div>
+      </div>
   </div>
         </section>';
   }
@@ -79,6 +102,12 @@ session_start();
     $idremove = $_POST['removemem'];
     $query = "DELETE FROM registersys WHERE id = '$idremove'";
     $db->exec($query);
+}
+if (isset($_POST['updaterole'])){
+  $idup = $_POST['memupdate'];
+  $tierup = $_POST['selecttier'];
+  $query = "UPDATE registersys SET tier = '$tierup' WHERE id = '$idup'";
+  $db->exec($query);
 }
   ?>
 

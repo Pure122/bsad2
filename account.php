@@ -3,12 +3,13 @@ require_once('components.php');
 include('server.php');
 session_start();
 if (!isset($_SESSION['username'])){
-  $_SESSION['regmsg'] = 'You must log in first';
+  header('location:login.php');
   
 }
 if (isset($_GET['logout'])){
   session_destroy();
   unset($_SESSION['username']);
+  
   
 }
 ?>
@@ -44,8 +45,31 @@ navhead();
 <h3 class="mb-4">ข้อมูลผู้ใช้</h3>
 <h3 class="mb-4">Username : <?php echo $_SESSION['username'] ;?></h3>
 <h3 class="mb-4">Role : <?php echo $_SESSION['role'] ;?></h3>
+<h3 class="mb-4">Tier : <?php 
+
+if($_SESSION['tier'] == 'standard'){
+  echo 'No Tier';
+}
+elseif($_SESSION['tier'] == 'silver'){
+  echo 'Silver Tier';
+}
+elseif($_SESSION['tier'] == 'gold'){
+  echo 'Gold Tier';
+}
+elseif($_SESSION['tier'] == 'platinum'){
+  echo 'Platinum Tier';
+}
+else{
+  echo $_SESSION['tier'] ;
+}
+
+
+
+
+?></h3>
+
 <?php if ($_SESSION['role'] == 'admin'){
-  echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage member</a>';
+  echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
 } ;?>
         </div>
         <div class="col-7">
