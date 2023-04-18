@@ -74,7 +74,7 @@ else{
         </div>
         <div class="col-7">
             <div class="row mx-4 mb-4 bg-white rounded p-5">
-                <h3>ประวัติการสั่งซื้อ</h3>
+                <a href="order.php"><h3>ดูรายละเอียดประวัติการสั่งซื้อ</h3></a>
             </div>
             <div class="row mx-4 mb-4 bg-white rounded p-5">
             <h3>ที่อยู่</h3>

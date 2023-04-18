@@ -83,8 +83,7 @@ session_start();
           <input type="text" name="memupdate" required="ID is required" class="form-control">
           <label class="form-label text-white" for="updaterole">Update Customer tier By ID</label>
           <select class="form-select form-select-lg my-5" aria-label=".form-select-lg example" name="selecttier">
-  <option selected>Select Tier</option>
-  <option value="standard">No Tier</option>
+  <option selected value="standard">No Tier</option>
   <option value="silver">Silver Tier</option>
   <option value="gold">Gold Tier</option>
   <option value="platinum">Platinum Tier</option>
@@ -97,6 +96,39 @@ session_start();
       </div>
   </div>
         </section>
+
+
+        <section class="home-wrapper-1 py-5">
+        <div class="container-xxl">
+        <h1 class="text-white py-3">Order Management</h1>
+        <form action="" method="POST">
+        <input type="text" name="remordid" required="ID is required" class="form-control" placeholder="ID of Order">
+        <button type="submit" name="remord" class="btn btn-danger btn-block my-4">Remove Order</button>
+        </form>
+        <table class="table bg-white">
+          <tr>
+            <th>OrderID</th>
+            <th>Customer Username</th>
+            <th>CustomerID</th>
+            <th>email</th>
+          </tr>';
+
+          $joinsql = "SELECT co.coid,re.id,re.username,email FROM customerorder co INNER JOIN registersys re on co.id = re.id";
+          $result = $db->query($joinsql);
+          while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            echo '<tr>
+            <td>' . $row['coid'] . '</td>
+            <td>' . $row['id'] . '</td>
+            <td>' . $row['username'] . '</td>
+            <td>' . $row['email'] . '</td>
+          </tr>';
+          }
+
+          echo '</table>
+          
+        </div>
+        </section>
+
 
         <section class="home-wrapper-1 py-5">
         <div class="container-xxl">
@@ -124,6 +156,7 @@ session_start();
 
       <div class="col-4">
       <button type="submit" name="addpro" class="btn btn-danger btn-block">Add</button>
+      <button type="submit" name="rempro" class="btn btn-danger btn-block mx-4">Remove</button>
       </div>
       </form>
       
@@ -193,7 +226,13 @@ session_start();
         </div>
         </section>';
   }
-
+  if (isset($_POST['rempro'])) {
+    $idpro = $_POST['proid'];
+    $quanpro = $_POST['proquan'];
+    $quanpro = (int)$quanpro;
+    $query = "UPDATE Products SET Prod_Quantity = Prod_Quantity-$quanpro WHERE ProdID = '$idpro'";
+    $db->exec($query);
+  }
   if (isset($_POST['addpro'])) {
     $idpro = $_POST['proid'];
     $quanpro = $_POST['proquan'];
@@ -212,6 +251,39 @@ session_start();
     $tierup = $_POST['selecttier'];
     $query = "UPDATE registersys SET tier = '$tierup' WHERE id = '$idup'";
     $db->exec($query);
+  }
+
+  if (isset($_POST['remord'])) {
+    $idord = $_POST['remordid'];
+    $sql11 = "SELECT * FROM customerorder where coid = ".$idord."";
+                    $ret11 = $db->query($sql11);
+                    while($row11 = $ret11->fetchArray(SQLITE3_ASSOC)){
+
+                        $sql12 = "SELECT * FROM customerorder_product where copid = ".($row11['coid'])."";
+                        $ret12 = $db->query($sql12);
+                       
+                        while($row12 = $ret12->fetchArray(SQLITE3_ASSOC)){
+                            
+                            $sql13 = "SELECT * FROM Products where ProdID = ".($row12['ProdID'])."";
+                            $ret13 = $db->query($sql13);
+                            
+                            while($row13 = $ret13->fetchArray(SQLITE3_ASSOC)){
+
+                                $orqty = $row12['quantity'];
+
+                              $query = "UPDATE Products SET Prod_Quantity = Prod_Quantity+$orqty  WHERE ProdID = ".($row13['ProdID'])."";
+                              $db->exec($query);
+
+                              $query2 = "DELETE FROM customerorder WHERE coid = '$idord'";
+                              $query3 = "DELETE FROM customerorder_product WHERE copid = '$idord'";
+
+                              $db->exec($query2);
+                              $db->exec($query3);
+                                
+                            }
+                        }
+
+                    }
   }
   ?>
 
