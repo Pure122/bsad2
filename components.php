@@ -22,10 +22,10 @@ function navhead(){
           </div>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">Upgrade</p>
+          <a class="text-white text-end mb-0">Upgrade</a>
         </div>
         <div class="col">
-          <a href="cart.php" class="text-white text-end mb-0">cart</a>
+          <a href="cart.php" class="text-white text-end mb-0">Cart</a>
         </div>
         <div class="col">
           <p class="text-white text-end mb-0">transfer</p>
@@ -83,16 +83,16 @@ function navhead(){
           </div>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">Upgrade</p>
+          <a class="text-white text-end mb-0">Upgrade</a>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">cart</p>
+        <a href="cart.php" class="text-white text-end mb-0">Cart</a>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">transfer</p>
+          <a class="text-white text-end mb-0">transfer</a>
         </div>
         <div class="col">
-          <p class="text-white text-end mb-0">status</p>
+          <a class="text-white text-end mb-0">status</a>
         </div>
         <div class="col-3">
           <p class="text-white text-end mb-0"><a href="login.php">Login</a></p>
