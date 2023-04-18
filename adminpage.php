@@ -55,10 +55,10 @@ session_start();
     $ret = $db->query($query);
     while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
       echo '<tr>
-      <td>'.$row['id'].'</td>
-      <td>'.$row['username'].'</td>
-      <td>'.$row['email'].'</td>
-      <td>'.$row['tier'].'</td>
+      <td>' . $row['id'] . '</td>
+      <td>' . $row['username'] . '</td>
+      <td>' . $row['email'] . '</td>
+      <td>' . $row['tier'] . '</td>
     </tr>';
     }
     echo '</table>
@@ -96,19 +96,123 @@ session_start();
       </div>
       </div>
   </div>
+        </section>
+
+        <section class="home-wrapper-1 py-5">
+        <div class="container-xxl">
+        <h1 class="text-white">Product Management</h1>
+        <form action="" method="POST">
+        <div class="row">
+        
+        
+        <div class="col-4">
+        
+      <div class="form-outline mb-4">
+          <input type="text" name="proid" required="ID is required" class="form-control" placeholder="ID of Product">
+          
+      </div>
+      </div>
+
+        <div class="col-4">
+        
+      <div class="form-outline mb-4">
+          <input type="text" name="proquan" required="Number" class="form-control" placeholder="Quantity">
+          
+      </div>
+      </div>
+      
+
+      <div class="col-4">
+      <button type="submit" name="addpro" class="btn btn-danger btn-block">Add</button>
+      </div>
+      </form>
+      
+      
+        <form action="" method="POST">
+        <div class="row w-75 m-auto">
+      
+      <div class="col-6">
+      <select class="form-select form-select-lg mb-5" aria-label=".form-select-lg example" name="selectcate">
+      <option selected value="all">Select Category</option>
+      <option value="Nintendo">Nintendo</option>
+      <option value="PC">PC</option>
+      <option value="PlayStation">PlayStation</option>
+      <option value="Xbox">Xbox</option>
+    </select>
+    
+      </div>
+      
+      <div class="col-4">
+      <button type="submit" name="find" class="btn btn-danger btn-block">Find</button>
+      </div>
+      
+      </div>
+      </form>
+      
+        </div>
+        </div>
+        <div class="container-xxl">
+        
+        <div class="row">
+        <table class="table bg-white">
+          <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>tier</th>
+          </tr>';
+    if (isset($_POST['find'])) {
+      $catefind = $_POST['selectcate'];
+      if ($catefind == 'Nintendo') {
+        $query = "SELECT * FROM Products WHERE Prod_Category = 'Nintendo'";
+      } elseif ($catefind == 'PC') {
+        $query = "SELECT * FROM Products WHERE Prod_Category = 'PC'";
+      } elseif ($catefind == 'PlayStation') {
+        $query = "SELECT * FROM Products WHERE Prod_Category = 'PlayStation'";
+      } elseif ($catefind == 'Xbox') {
+        $query = "SELECT * FROM Products WHERE Prod_Category = 'Xbox'";
+      }
+      else {
+        $query = "SELECT * FROM Products";
+      }
+
+    } else{
+      $query = "SELECT * FROM Products";
+    }
+    $ret = $db->query($query);
+    while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
+      echo '<tr>
+      <td>' . $row['ProdID'] . '</td>
+      <td>' . $row['Prod_Name'] . '</td>
+      <td>' . $row['Prod_Category'] . '</td>
+      <td>' . $row['Prod_Quantity'] . '</td>
+    </tr>';
+    }
+    echo '</table>
+        </div>
+        </div>
         </section>';
   }
-  if (isset($_POST['removemember'])){
+
+  if (isset($_POST['addpro'])) {
+    $idpro = $_POST['proid'];
+    $quanpro = $_POST['proquan'];
+    $quanpro = (int)$quanpro;
+    $query = "UPDATE Products SET Prod_Quantity = Prod_Quantity+$quanpro WHERE ProdID = '$idpro'";
+    $db->exec($query);
+  }
+
+  if (isset($_POST['removemember'])) {
     $idremove = $_POST['removemem'];
     $query = "DELETE FROM registersys WHERE id = '$idremove'";
     $db->exec($query);
-}
-if (isset($_POST['updaterole'])){
-  $idup = $_POST['memupdate'];
-  $tierup = $_POST['selecttier'];
-  $query = "UPDATE registersys SET tier = '$tierup' WHERE id = '$idup'";
-  $db->exec($query);
-}
+  }
+  if (isset($_POST['updaterole'])) {
+    $idup = $_POST['memupdate'];
+    $tierup = $_POST['selecttier'];
+    $query = "UPDATE registersys SET tier = '$tierup' WHERE id = '$idup'";
+    $db->exec($query);
+  }
   ?>
 
   <?php
