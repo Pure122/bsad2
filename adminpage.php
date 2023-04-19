@@ -38,7 +38,7 @@ session_start();
     </div>
 </div>
       </section>';
-  } else {
+  } else if($_SESSION['role'] == 'seller') {
     echo '<section class="home-wrapper-1 py-5">
       <div class="container-xxl">
           <div class="row text-center mb-5">
@@ -127,9 +127,10 @@ session_start();
           echo '</table>
           
         </div>
-        </section>
+        </section>';}
 
-
+        else if($_SESSION['role'] == 'warehouse'){
+          echo '
         <section class="home-wrapper-1 py-5">
         <div class="container-xxl">
         <h1 class="text-white">Product Management</h1>

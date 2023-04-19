@@ -68,7 +68,7 @@ else{
 
 ?></h3>
 
-<?php if ($_SESSION['role'] == 'admin'){
+<?php if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){
   echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
 } ;?>
         </div>
