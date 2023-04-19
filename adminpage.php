@@ -189,10 +189,10 @@ session_start();
         <div class="row">
         <table class="table bg-white">
           <tr>
-            <th>id</th>
-            <th>username</th>
-            <th>email</th>
-            <th>tier</th>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Platform</th>
+            <th>Qunatity Left</th>
           </tr>';
     if (isset($_POST['find'])) {
       $catefind = $_POST['selectcate'];

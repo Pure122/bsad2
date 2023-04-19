@@ -2,17 +2,18 @@
 require_once('components.php');
 include('server.php');
 session_start();
-if (!isset($_SESSION['username'])){
-  header('location:login.php');
-  
-}
-if (isset($_GET['logout'])){
-  session_destroy();
-  unset($_SESSION['username']);
-  
-  
-}
+
 if(isset($_POST['add'])){
+  if (!isset($_SESSION['username'])){
+    header('location:login.php');
+    
+  }
+  if (isset($_GET['logout'])){
+    session_destroy();
+    unset($_SESSION['username']);
+    
+    
+  }
   if(isset($_SESSION['cart'])){
     $itme_array_id = array_column($_SESSION['cart'],"cardid"); 
     if(in_array($_POST['cardid'],$itme_array_id)){
@@ -70,6 +71,7 @@ navhead();
         </div>
   <?php
     if(isset($_GET['cat'])){
+      
       $cate = $_GET['cat'];
       if($cate == 'all'){
         echo '<h1 style="color: white;">All Products</h1>';
