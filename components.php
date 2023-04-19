@@ -22,16 +22,10 @@ function navhead(){
           </div>
         </div>
         <div class="col">
-          <a class="text-white text-end mb-0">Upgrade</a>
-        </div>
-        <div class="col">
           <a href="cart.php" class="text-white text-end mb-0">Cart</a>
         </div>
         <div class="col">
         <a href="order.php" class="text-white text-end mb-0">Order</a>
-        </div>
-        <div class="col">
-          <p class="text-white text-end mb-0">status</p>
         </div>
         <div class="col-3">
           <p class="text-white text-end mb-0"><a href="account.php" ><i class="bi bi-person-circle"></i></a> '.$_SESSION['username'].'   <a href="index.php?logout="1"">Logout</a></p>
@@ -83,17 +77,12 @@ function navhead(){
           </div>
         </div>
         <div class="col">
-          <a class="text-white text-end mb-0">Upgrade</a>
-        </div>
-        <div class="col">
         <a href="cart.php" class="text-white text-end mb-0">Cart</a>
         </div>
         <div class="col">
           <a href="order.php" class="text-white text-end mb-0">Order</a>
         </div>
-        <div class="col">
-          <a class="text-white text-end mb-0">status</a>
-        </div>
+
         <div class="col-3">
           <p class="text-white text-end mb-0"><a href="login.php">Login</a></p>
         </div>
