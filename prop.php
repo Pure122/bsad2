@@ -100,7 +100,7 @@ $slide = 0;
             echo '<div class="carousel-item active">
             
                 <img src="' . $inp . '"
-                  class="img-fluid">
+                class="img-fluid d-block p-0">
                   
               </div>';
           } 

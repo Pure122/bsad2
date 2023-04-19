@@ -60,9 +60,10 @@ if(isset($_POST['add'])){
 <?php
 navhead();
 ?>
-<section class="home-wrapper-1 py-5">
+<section class="home-wrapper-1 pt-5">
         <div class="container-xxl">
-          <div class="row w-75 h-75 m-auto">
+          <h1 class="text-center text-white pt-5">You may like</h1>
+          <div class="row w-75 m-auto">
             <div class="col">
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -71,15 +72,43 @@ navhead();
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="prop.php?idg=101">
+                  <img src="picture/supersmash.avif" class="img-fluid d-block p-0" alt="..." style="width:100%;" />
+                </a>
+                </div>
+                <div class="carousel-item">
+                <a href="prop.php?idg=102">
+                    <img src="picture/animalcross.avif" class="img-fluid d-block p-0" alt="..." style="width:100%;"/>
+                  </a>
+                  </div>
+                  <div class="carousel-item">
+                  <a href="prop.php?idg=103">
+                    <img src="picture/zelda.avif" class="img-fluid d-block p-0" alt="..." style="width:100%;"/>
+                    </a>  
+                  </div>
+                <!-- <?php
+                $queryhome = "SELECT * FROM Products order by random() LIMIT 3";
+                $check = 0;
+                $reth = $db->query($queryhome);
+                while($rowh = $reth->fetchArray(SQLITE3_ASSOC)){
+                if($check == 0){
+                  echo '
+                
                   <div class="carousel-item active">
-                    <img src="picture/animalcross.avif" class="img-fluid" alt="..." />
-                  </div>
+                    <img src="'.$rowh['Prod_Pic1'].'" class="img-fluid d-block h-75 w-100 p-0" alt="..." style="width:100%;" />
+                  </div>';
+                }
+                else{
+                  echo '
                   <div class="carousel-item">
-                    <img src="picture/supersmash.avif" class="img-fluid" alt="..." />
+                    <img src="'.$rowh['Prod_Pic1'].'" class="img-fluid d-block h-75 w-100 p-0" alt="..." style="width:100%;"/>
                   </div>
-                  <div class="carousel-item">
-                    <img src="picture/zelda.avif" class="img-fluid" alt="..." />
-                  </div>
+                  ';}
+                  $check++;
+                }
+                
+                ?> -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
