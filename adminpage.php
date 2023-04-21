@@ -100,20 +100,45 @@ session_start();
 
         <section class="home-wrapper-1 py-5">
         <div class="container-xxl">
+        <div class="row">
+
+        <div class="col-6">
         <h1 class="text-white py-3">Order Management</h1>
         <form action="" method="POST">
         <input type="text" name="remordid" required="ID is required" class="form-control" placeholder="ID of Order">
-        <button type="submit" name="remord" class="btn btn-danger btn-block my-4">Remove Order</button>
+        
+        
+        
+      <div class="form-outline mb-4">
+      <h1 class="text-white my-3">Select status to update</h1>
+          <select class="form-select form-select-lg my-1" aria-label=".form-select-lg example" name="selectstatus">
+  <option selected value="new">New</option>
+  <option value="in progress">In progress</option>
+  <option value="complete">Complete</option>
+</select>
+          
+      </div>
+      <button type="submit" name="updatestatus" class="btn btn-danger btn-block mb-4">Update</button>
+      <button type="submit" name="remord" class="btn btn-danger btn-block mb-4 mx-5">Remove Order</button>
+      
         </form>
+        </div>
+
+        
+        </div>
+        
+        
         <table class="table bg-white">
           <tr>
             <th>OrderID</th>
-            <th>Customer Username</th>
             <th>CustomerID</th>
+            <th>Customer Username</th>
             <th>email</th>
+            <th>Date ordered</th>
+            <th>Status</th>
           </tr>';
 
-          $joinsql = "SELECT co.coid,re.id,re.username,email FROM customerorder co INNER JOIN registersys re on co.id = re.id";
+          $joinsql = "SELECT co.coid,re.id,re.username,email,date,status FROM customerorder co INNER JOIN registersys re on co.id = re.id";
           $result = $db->query($joinsql);
           while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             echo '<tr>
@@ -121,6 +146,8 @@ session_start();
             <td>' . $row['id'] . '</td>
             <td>' . $row['username'] . '</td>
             <td>' . $row['email'] . '</td>
+            <td>' . $row['date'] . '</td>
+            <td>' . $row['status'] . '</td>
           </tr>';
           }
 
@@ -251,6 +278,12 @@ session_start();
     $idup = $_POST['memupdate'];
     $tierup = $_POST['selecttier'];
     $query = "UPDATE registersys SET tier = '$tierup' WHERE id = '$idup'";
+    $db->exec($query);
+  }
+  if (isset($_POST['updatestatus'])) {
+    $oidup = $_POST['remordid'];
+    $statusup = $_POST['selectstatus'];
+    $query = "UPDATE customerorder SET status = '$statusup' WHERE coid = '$oidup'";
     $db->exec($query);
   }
 

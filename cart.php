@@ -59,7 +59,7 @@ if(isset($_POST['remove'])){
             echo '<section class="home-wrapper-1 py-5">
             <div class="container-xxl">
                 <div class="row text-center mb-5">
-                <div class="col-12">
+                <div class="col-7">
                 <h3 class="text-white">Your Cart Item</h3>
                 <table class="table bg-white">
                 <tr>
@@ -106,11 +106,41 @@ if(isset($_POST['remove'])){
                 </table>
                 <div class="row">
 
-                <form action="order.php" method="post" class="cart-item">
-                <button type="submit" name="createpo" class="btn btn-danger" value="'.$_SESSION['userid'].'">Create Order</button>
-                </form>
+
 
                 </div>
+                </div>
+                <div class="col-5">
+                <h1 class="text-white">Fill in Address</h1>
+
+
+
+                <form action="order.php" method="POST">
+        <div class="form-outline mb-4">
+            <input type="text" name="hnum" required="House Number is required" class="form-control">
+            <label for="hnum" class="form-label text-white">House Number</label>
+            
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" name="road" required="Road is required" class="form-control">
+            <label for="email" class="form-label text-white">Road</label>
+            
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" name="district" required="Subdistrict, District, Province" class="form-control">
+            <label for="district" class="form-label text-white">Subdistrict, District, Province</label>
+            
+        </div>
+        <div class="form-outline mb-4">
+            <input type="text" name="postal" required="Postal Code is required" class="form-control" minlength="5">
+            <label for="postal" class="form-label text-white">Postal Code</label>
+            
+        </div>
+        <button type="submit" name="createpo" class="btn btn-danger" value="'.$_SESSION['userid'].'">Create Order</button>
+    </form>
+
+
+
                 </div>
                   </div>
               </div>

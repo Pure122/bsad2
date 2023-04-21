@@ -66,19 +66,21 @@ else{
 
 
 
-?></h3>
+?>
+</h3>
 
 <?php if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){
   echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
-} ;?>
+} 
+$sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']."";
+    $ret = $db->query($sql);
+    $row = $ret->fetchArray(SQLITE3_ASSOC);?>
         </div>
         <div class="col-7">
             <div class="row mx-4 mb-4 bg-white rounded p-5">
-                <a href="order.php"><h3>ดูรายละเอียดประวัติการสั่งซื้อ</h3></a>
+                <a href="order.php"><h3>ประวัติการสั่งซื้อ <?=$row['count(coid)']?> ครั้ง</h3></a>
             </div>
-            <div class="row mx-4 mb-4 bg-white rounded p-5">
-            <h3>ที่อยู่</h3>
-            </div>
+
         </div>
     </div>
 </div>

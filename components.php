@@ -1,6 +1,19 @@
 <?php
+
+
 function navhead(){
+
   if (isset($_SESSION['username'])) {
+    if(isset($_SESSION['cart'])){
+      $totalqty = 0;
+    foreach ($_SESSION['cart'] as $key => $value){
+          $cprice = (int)$value['qty'];
+          $totalqty += $cprice;
+      }
+    }
+    else{
+      $totalqty = "";
+    }
     $navh = '<header class="header-top-strip py-3">
     <div class="container-xxl">
       <div class="row">
@@ -22,7 +35,7 @@ function navhead(){
           </div>
         </div>
         <div class="col">
-          <a href="cart.php" class="text-white text-end mb-0">Cart</a>
+          <a href="cart.php" class="text-white text-end mb-0">Cart '.$totalqty.' <i class="bi bi-cart-fill"></i></a>
         </div>
         <div class="col">
         <a href="order.php" class="text-white text-end mb-0">Order</a>
@@ -77,7 +90,7 @@ function navhead(){
           </div>
         </div>
         <div class="col">
-        <a href="cart.php" class="text-white text-end mb-0">Cart</a>
+        <a href="cart.php" class="text-white text-end mb-0">Cart <i class="bi bi-cart-fill"></i></a>
         </div>
         <div class="col">
           <a href="order.php" class="text-white text-end mb-0">Order</a>
@@ -123,6 +136,8 @@ function footer(){
     <div class='row'>
       <div class='col-3'>
         <h4 class='text-white mb-4'>Contact us</h4>
+        <p class='text-white'>dheepapol@hotmail.com</p>
+        <p class='text-white'>Tel +66 926957100</p>
         <div></div>
       </div>
       <div class='col-3'>

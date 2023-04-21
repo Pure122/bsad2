@@ -44,7 +44,9 @@ if (isset($_GET['logout'])){
 <?php
 
 if(isset($_POST['createpo'])){
-    $sql1 = "INSERT INTO customerorder (id) VALUES (".($_SESSION['userid']).")";
+    $address = $_POST['hnum']." ".$_POST['road']." ".$_POST['district']." ".$_POST['postal'];
+    $oddate = date("Y-m-d h:i:sa");
+    $sql1 = "INSERT INTO customerorder (id,date,address,status) VALUES (".($_SESSION['userid']).",\"$oddate\",\"$address\",\"new\")";
     $db->exec($sql1);
     $sql2 = "SELECT MAX(coid) as maxid FROM customerorder";
     $ret = $db->query($sql2);
