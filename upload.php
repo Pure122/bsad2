@@ -3,8 +3,8 @@ session_start();
 include('server.php');
 
 
-$targetmaindir = "testpic/mainpic/";
-$targetindir = "testpic/inpic/";
+$targetmaindir = "bsadpic/mainpic/";
+$targetindir = "bsadpic/inpic/";
 $picnamemain = $_FILES['mainpic']['name'];
 $insertpic = "";
 $inpicnames = array_filter($_FILES['inpic']['name']);
@@ -39,6 +39,7 @@ if(isset($_POST['newpro'])){
                  $sqlvalue = "("."'$newid',"."'$newname',"."'$newdesc',"."'$newprc',"."'$newqty',"."'$newcate',"."'$targetmainpic'".$insertpic.")";
                 $insertsql = "INSERT INTO Products (ProdID,Prod_Name,Prod_Desc,Prod_Price,Prod_Quantity,Prod_Category,Prod_Mainpic,Prod_Pic1,Prod_Pic2,Prod_Pic3,Prod_Pic4) VALUES $sqlvalue";
             $db->exec($insertsql);
+            header('location:index.php');
 
             
         
