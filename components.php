@@ -169,6 +169,26 @@ function footer(){
 function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic,$cardqty){
       floatval(preg_replace('/[^\d.],/', '', '"'.$cardprice.'"'));
     $cardprice = number_format($cardprice,2);
+    if($cardqty == 0){
+      $prod = '    <div class="col-3 my-3">
+      <form action="" method="POST">
+      <div class="product-card">
+          <div class="product-image">
+              <a href="prop.php?idg=' . $cardid . '"><img class="img-fluid" src="'.$cardpic.'"/></a>
+          </div>
+          <div class="product-details my-4">
+              <h6 class="product-name">'.$cardname.'</h6>
+              <h5 class="product-title">'.$carddesc.'</h5>
+              
+              <p class="price m-0">'.$cardprice.' Baht</p>
+              
+              <h2 class="my-3 text-danger">Out of stock!</h2>
+              <input type="hidden" name="cardid" value="'.$cardid.'">
+          </div>
+      </div>
+      </form>
+    </div>';
+    }else{
   $prod = '    <div class="col-3 my-3">
   <form action="" method="POST">
   <div class="product-card">
@@ -187,6 +207,8 @@ function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic,$cardqty){
   </div>
   </form>
 </div>';
+}
+
 echo $prod;
 }
 ?>

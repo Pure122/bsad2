@@ -66,6 +66,8 @@
     padding: 15px;
     background-color: white;
     border-radius: 10px;
+    max-height: 510px;
+    height: 510px;
   }
   
   .product-card .product-image {
