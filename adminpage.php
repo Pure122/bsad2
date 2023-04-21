@@ -188,6 +188,59 @@ session_start();
       </div>
       </form>
       
+       <form action="upload.php" method="POST" enctype="multipart/form-data">
+       <div class="row mb-5">
+      <div class="col-4">
+      <h3 class="text-white">Upload new Product</h3>
+      <div class="form-outline my-2">
+          <input type="file" name="mainpic" required="required" class="form-control" accept="image/png, image/jpg, image/jpeg">
+          <label for="mainpic" class="form-label text-white">Main Picture</label>
+      </div>
+      <div class="form-outline my-2">
+          <input type="file" name="inpic[]" required="required" class="form-control" accept="image/png, image/jpg, image/jpeg" multiple="multiple">
+          <label for="inpic" class="form-label text-white">Picture Inside</label>
+      </div>
+      <p class="text-white">Note : Only Jpeg, Jpg, Png File are allowed</p>
+      <button type="submit" name="newpro" class="btn btn-success btn-block">Upload</button>
+      </div>
+      <div class="col-6">
+      <h3 class="text-white">Hi</h3>
+         
+        <div class="form-outline mb-2">
+            <input type="text" name="newproid" required="Username is required" class="form-control" placeholder="ID">
+        </div>
+        <div class="form-outline mb-2">
+        <input type="text" name="newproname" required="Username is required" class="form-control" placeholder="Name">
+
+    </div>
+    <div class="form-outline mb-2">
+    <input type="text" name="newprodesc" required="Username is required" class="form-control" placeholder="Description">
+
+</div>
+<div class="form-outline mb-2">
+<input type="text" name="newproprice" required="Username is required" class="form-control" placeholder="Price">
+
+</div>
+<div class="form-outline mb-2">
+<input type="text" name="newproqty" required="Username is required" class="form-control" placeholder="Quantity">
+
+</div>
+<div class="form-outline mb-2">
+<select class="form-select form-select-lg" aria-label=".form-select-lg example" name="newprocate">
+<option selected value="Nintendo">Nintendo</option>
+<option value="PC">PC</option>
+<option value="PlayStation">PlayStation</option>
+<option value="Xbox">Xbox</option>
+</select>
+<label for="username" class="form-label text-white">Category</label>
+</div>
+        </form>
+      </div>
+      
+      </div>
+     
+      
+      
       
         <form action="" method="POST">
         <div class="row w-75 m-auto">
