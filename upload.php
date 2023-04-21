@@ -6,6 +6,7 @@ include('server.php');
 $targetmaindir = "testpic/mainpic/";
 $targetindir = "testpic/inpic/";
 $picnamemain = $_FILES['mainpic']['name'];
+$insertpic = "";
 $inpicnames = array_filter($_FILES['inpic']['name']);
 
 if(isset($_POST['newpro'])){
@@ -37,7 +38,7 @@ if(isset($_POST['newpro'])){
                  $newcate = $_POST['newprocate'];
                  $sqlvalue = "("."'$newid',"."'$newname',"."'$newdesc',"."'$newprc',"."'$newqty',"."'$newcate',"."'$targetmainpic'".$insertpic.")";
                 $insertsql = "INSERT INTO Products (ProdID,Prod_Name,Prod_Desc,Prod_Price,Prod_Quantity,Prod_Category,Prod_Mainpic,Prod_Pic1,Prod_Pic2,Prod_Pic3,Prod_Pic4) VALUES $sqlvalue";
-            $db->query($insertsql);
+            $db->exec($insertsql);
 
             
         
