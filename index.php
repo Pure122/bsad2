@@ -62,7 +62,7 @@ navhead();
 ?>
 <section class="home-wrapper-1 pt-5">
         <div class="container-xxl">
-          <h1 class="text-center text-white pt-5">You may like</h1>
+          <h1 class="text-center text-white pt-5">คุณอาจชอบ</h1>
           <div class="row w-75 m-auto">
             <div class="col">
               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
