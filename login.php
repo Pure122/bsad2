@@ -32,7 +32,7 @@ session_start();
     <form action="login_db.php" method="POST">
         <div class="form-outline mb-4">
             <input type="text" name="username" required="Username is required" class="form-control">
-            <label class="form-label text-white" for="username">Username</label>
+            <label class="form-label text-white" for="username">Usernameeeeeeeeeeee</label>
             
         </div>
         <div class="form-outline mb-4">
