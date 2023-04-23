@@ -23,7 +23,7 @@ session_start();
 
 .login-box{
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     width: 400px;
     padding: 40px;
@@ -31,7 +31,7 @@ session_start();
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .login-box h2{
     margin: 0 0 30px;
@@ -70,7 +70,7 @@ session_start();
     color: #03e9f4;
     font-size: 12px;
 }
-.login-box form a{
+.login-box form .but{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -83,7 +83,7 @@ session_start();
     margin-top: 40px;
     letter-spacing: 4px;
 }
-.login-box a:hover{
+.login-box .but:hover{
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
@@ -92,11 +92,11 @@ session_start();
                 0 0 50px #03e9f4,
                 0 0 100px #03e9f4;
 }
-.login-box a span{
+.login-box .but span{
     position: absolute;
     display: block;
 }
-.login-box a span:nth-child(1){
+.login-box .but span:nth-child(1){
     top: 0;
     left: -100%;
     height: 2px;
@@ -112,7 +112,7 @@ session_start();
         left: 100%;
     }
 }
-.login-box a span:nth-child(2){
+.login-box .but span:nth-child(2){
     top: -100%;
     right: 0;
     width: 2px;
@@ -129,7 +129,7 @@ session_start();
         top: 100%;
     }
 }
-.login-box a span:nth-child(3){
+.login-box .but span:nth-child(3){
     bottom: 0;
     right: -100%;
     width: 100%;
@@ -146,7 +146,7 @@ session_start();
         right: 100%;
     }
 }
-.login-box a span:nth-child(4){
+.login-box .but span:nth-child(4){
     bottom: -100%;
     left: 0;
     width: 2px;
@@ -163,10 +163,10 @@ session_start();
         bottom: 100% ;
     }
 }
-.boxcol{
-    background: transparent;
+.but{
+    background-color: transparent;
+    border: none;"
 }
-
     </style>
 </head>
 <body>
@@ -217,19 +217,13 @@ session_start();
                     ?>
                 </h3>
             </div>
-        <!-- <button type='submit' name="login" class='button'>Login</button> -->
+        <button type='submit' name="login" class='button but'>Login
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+        </button>
 
-        <!--  -->
-        <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Submit
-            </a>
-        <!--  -->
-
-    
         <script>
       const button = document.querySelector(".button");
 
@@ -247,7 +241,8 @@ session_start();
 
 
         <div class="text-center">
-        <p class="text-white">Not a member? <a href="reg.php"><u>Sign up</u></a></p>
+        <br>
+        <p class="text-white">Not a member? <button onclick="window.location.href='reg.php'" style="border: none; background:transparent; "class="text-white"><u>Sign up</u></button></p>
         </div>
     </form>
                 </div>

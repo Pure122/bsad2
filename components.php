@@ -1,6 +1,5 @@
 <?php
 
-
 function navhead(){
 
   if (isset($_SESSION['username'])) {
@@ -169,28 +168,30 @@ function footer(){
 function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic,$cardqty){
       floatval(preg_replace('/[^\d.],/', '', '"'.$cardprice.'"'));
     $cardprice = number_format($cardprice,2);
-  $prod = '    <div class="col-3 my-3">
-  <form action="" method="POST">
-  <div class="product-card">
-      <div class="product-image">
-          <a href="prop.php?idg=' . $cardid . '"><img class="img-fluid" src="'.$cardpic.'"/></a>
-      </div>
-      <div class="product-details my-4">
-          <h6 class="product-name">'.$cardname.'</h6>
-          <h5 class="product-title">'.$carddesc.'</h5>
-          
-          <p class="price m-0">'.$cardprice.' Baht</p>
-          <input type="number" name="qty" value="1" max="'.$cardqty.'">
 
+    
+$prod = '<div class="center">
+<div class="card">
+    <img src="'.$cardpic.'" alt="">
+    <div class="card-title">
+        <h3>'.$cardname.'</h3>
+    </div>
+    <div class="card-details">
+        <button>buy</button>
+        <button>cart</button>
 
-          <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
-
-
-          <input type="hidden" name="cardid" value="'.$cardid.'">
-      </div>
-  </div>
-  </form>
+        <div class="details">
+            <h1>'.$cardname.'</h1>
+            <p>'.$carddesc.'</p>
+            <h2>'.$cardprice.'<span>$85</span></h2>
+            <input type="number" name="qty" value="1" max="'.$cardqty.'">
+        </div>
+    </div>
+</div>
 </div>';
+  
+
+
 echo $prod;
 }
 ?>
