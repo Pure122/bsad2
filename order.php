@@ -79,7 +79,7 @@ if(isset($_POST['createpo'])){
 
                     <?php
                     
-                    $sql11 = "SELECT * FROM customerorder where id = ".($_SESSION['userid'])."";
+                    $sql11 = "SELECT * FROM customerorder where id = ".($_SESSION['userid'])." and status in ('in progress', 'new')";
                     $ret11 = $db->query($sql11);
                    $retc = $db->query($sql11);
                    $rowc = $retc->fetchArray(SQLITE3_ASSOC);
@@ -100,7 +100,7 @@ if(isset($_POST['createpo'])){
                           <th>Total Quantity</th>
                           <th>Price</th>
                         </tr>';
-                        $sql12 = "SELECT * FROM customerorder_product where copid = ".($row11['coid'])."";
+                        $sql12 = "SELECT * FROM customerorder_product where copid = ".($row11['coid'])." ";
                         $ret12 = $db->query($sql12);
                        
                         while($row12 = $ret12->fetchArray(SQLITE3_ASSOC)){
