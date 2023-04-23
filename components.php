@@ -18,11 +18,11 @@ function navhead(){
     <div class="container-xxl">
       <div class="row">
         <div class="col-1">
-          <p class="text-white text-end mb-0"><a href="index.php">Logo</a></p>
+          <p class="text-white text-end mb-0"><a href="index.php"><img src="logo.png" alt="Logo"></a></p>
         </div>
         <div class="col-2">
           <div class="dropdown">
-            <button class="btn dropdown-toggle text-white p-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn dropdown-toggle text-white p-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown button
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -73,9 +73,9 @@ function navhead(){
     <div class="container-xxl">
       <div class="row">
         <div class="col-1">
-          <p class="text-white text-end mb-0"><a href="index.php">Logo</a></p>
+          <p class="text-white text-end mb-0"><a href="index.php"><img src="logo.png" alt="Logo"></a></p>
         </div>
-        <div class="col-2">
+        <div class="col-2" style="position:relative; top: 8px;">
           <div class="dropdown">
             <button class="btn dropdown-toggle text-white p-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown button
@@ -89,14 +89,14 @@ function navhead(){
             </ul>
           </div>
         </div>
-        <div class="col">
+        <div class="col-1" style="position:relative; top: 8px;">
         <a href="cart.php" class="text-white text-end mb-0">Cart <i class="bi bi-cart-fill"></i></a>
         </div>
-        <div class="col">
+        <div class="col" style="position:relative; top: 8px;">
           <a href="order.php" class="text-white text-end mb-0">Order</a>
         </div>
 
-        <div class="col-3">
+        <div class="col-3" style="position:relative; top: 8px;">
           <p class="text-white text-end mb-0"><a href="login.php">Login</a></p>
         </div>
       </div>
@@ -108,9 +108,9 @@ function navhead(){
         <div class="col-7"></div>
         <div class="col-5">
         <form action="category.php" method="GET">
-        <div class="input-group">
+        <div class="input-group test">
             <input type="text" name="search"
-              class="form-control py-2"
+              class="form-control py-1"
               placeholder="Search....."
               aria-label="Search....."
               aria-describedby="basic-addon2" />
@@ -181,7 +181,11 @@ function prodcard($cardname,$carddesc,$cardprice,$cardid,$cardpic,$cardqty){
           
           <p class="price m-0">'.$cardprice.' Baht</p>
           <input type="number" name="qty" value="1" max="'.$cardqty.'">
+
+
           <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
+
+
           <input type="hidden" name="cardid" value="'.$cardid.'">
       </div>
   </div>
