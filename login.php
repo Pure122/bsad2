@@ -187,13 +187,13 @@ session_start();
         </div> -->
         <!--  -->
         <div class="user-box">
-                <input type="text" name="" required="" class="boxcol">
+                <input type="text" name="username" required="" class="boxcol">
                 <label>Username</label>
             </div>
         <!--  -->
 
         <div class="user-box">
-                <input type="password" name="" required="">
+                <input type="password" name="password" required="">
                 <label>Password</label>
             </div>
 

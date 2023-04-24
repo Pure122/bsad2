@@ -268,3 +268,6 @@ a:hover {
 .details h2 span{
   font-size: 30px;
 }
+.center .card-title h3{
+  background-color: red;
+}
