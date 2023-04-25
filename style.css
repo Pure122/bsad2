@@ -36,6 +36,7 @@
   
   .header-upper .input-group-text{
   background-color: var(--color-febd69);
+  border-radius: 20px 20px 20px 20px;
   }
   /* header part end*/
   
@@ -121,3 +122,15 @@
     background-color: white;
   }
   /*Home end*/
+
+
+  /* dean code*/
+  img {
+    max-width: 70%;
+    height: auto;
+  }
+.form-control{
+  border-radius: 20px 20px 20px 20px;
+}
+
+/*  */
