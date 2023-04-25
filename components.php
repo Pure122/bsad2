@@ -318,7 +318,9 @@ a:hover span:nth-child(1)
 
     <header class="header-top-strip py-4">
     <div class="container-xxl">
-    <div class="">
+    <div class="row">
+    
+    <div class="col-9">
     <nav>
         <a href="index.php"><img src="logo.png" alt="Logo"></a>
         <div class="dropdown col-4">
@@ -335,12 +337,16 @@ a:hover span:nth-child(1)
         <a href="order.php" class="text-white col-1">Order</a>
 
         <div class="animation "></div>
-      </div>
-      </div>
+
     </nav>
-    <div class="header-top-strip">
-          <p class="textlg text-white text-end mb-1"><a href="account.php" ><i class="bi bi-person-circle"></i></a> '.$_SESSION['username'].'   <button class="button" onclick="logout()"">Logout</button></p>
-        </div>
+    </div>
+
+    <div class="col-3">
+    <p class="textlg text-white text-end mb-1"><a href="account.php" ><i class="bi bi-person-circle"></i></a> '.$_SESSION['username'].'   <button class="button" onclick="logout()"">Logout</button></p>
+    </div>
+    
+    </div>
+ 
 
         <script>
       const button = document.querySelector(".button");
