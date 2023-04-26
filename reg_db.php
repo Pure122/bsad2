@@ -15,7 +15,7 @@ if (isset($_POST['register'])){
         
     }
 
-    $user_check = "SELECT * FROM registersys WHERE username = '$username' or email = '$email'";
+    $user_check = "SELECT * FROM Users WHERE username = '$username' or email = '$email'";
     $ret = $db->query($user_check);
     $row = $ret->fetchArray(SQLITE3_ASSOC);
 
@@ -28,7 +28,7 @@ if (isset($_POST['register'])){
         }
     }
     if (count($error) == 0){
-        $sqlinsert = "INSERT INTO registersys (username, email, password ,role,tier) VALUES ('$username','$email','$password','customer','standard')";
+        $sqlinsert = "INSERT INTO Users (username, email, password ,role,tier) VALUES ('$username','$email','$password','customer','standard')";
         $db->exec($sqlinsert);
         header('location:login.php');
     }
