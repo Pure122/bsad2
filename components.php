@@ -340,7 +340,7 @@ a:hover span:nth-child(1)
     </div>
 
     <div class="col-3">
-    <p class="textlg text-white text-end mb-1"><a href="account.php" ><i class="bi bi-person-circle"></i></a> '.$_SESSION['username'].'   <button class="button" onclick="logout()"">Logout</button></p>
+    <p class="textlg text-white text-end mb-1"><a href="account.php" ><i class="fa fa-user-circle"></i></a> '.$_SESSION['username'].'   <button class="button" onclick="logout()"">Logout</button></p>
     </div>
     
     </div>

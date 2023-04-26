@@ -125,6 +125,7 @@ border-radius: 10px;
 }
 .icon{
   text-align: center;
+  
 }
     </style>
 </head>
@@ -139,7 +140,7 @@ navhead();
 
 <div class="container">
         <div class="box">
-            <div class="icon"><i style="margin-top: 30%;font-size:30px" class="fa fa-search" aria-hidden="true"></i></div>
+            <div class="icon"><i style="margin-top:30%;font-size:30px" class="fa fa-user-circle" aria-hidden="true"></i></div>
             <div class="content">
                 <h3>User Infomation</h3>
                 <h3 class="">Username : <?php echo $_SESSION['username'] ;?></h3>
