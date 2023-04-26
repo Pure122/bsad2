@@ -209,7 +209,7 @@ tbody tr.hide td img {
 }
 
 .status.complete {
-    background-color: #6fcaea;
+    background-color: #46D94C;
 }
 
 
