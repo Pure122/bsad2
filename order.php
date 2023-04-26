@@ -293,7 +293,7 @@ if(isset($_POST['createpo'])){
 
                     <?php
                     
-                    $sql11 = "SELECT * FROM customerorder where id = ".($_SESSION['userid'])." and status in ('in progress', 'new','complete')";
+                    $sql11 = "SELECT * FROM customerorder where id = ".($_SESSION['userid'])." and status in ('shipping', 'new')";
                     $ret11 = $db->query($sql11);
                    $retc = $db->query($sql11);
                    $rowc = $retc->fetchArray(SQLITE3_ASSOC);
