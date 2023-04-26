@@ -41,9 +41,8 @@ if (isset($_GET['logout'])){
 .container
 {
   position: relative;
-  width: 1200px;
-  height: 300px;
-  margin: 240px auto;
+  width: 40%;
+  height: 50%;
 }
 .container .box
 {
@@ -51,9 +50,9 @@ position: relative;
 /* width: calc(400px - 30px);
 height: calc(300px - 30px); */
 width: 500px;
-height: 330px;
+height: 350px;
 
-background: rgba(70, 217, 76, 0.5);
+background: rgba(0, 0, 0, 0.8);
 float: left;
 margin: 15px;
 box-sizing: border-box;
@@ -67,7 +66,7 @@ border-radius: 10px;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #46D94C;
+  background: #fff;
   transition: 0.5s;
   z-index: 1;
 }
@@ -113,7 +112,7 @@ border-radius: 10px;
 {
   margin: 0 0 10px;
   padding: 0;
-  color: black;
+  color: #fff;
   font-size: 24px;
 }
 .container .box .content p
@@ -126,6 +125,9 @@ border-radius: 10px;
 .icon{
   text-align: center;
   
+}
+.plshelp{
+  align-items: ;
 }
     </style>
 </head>
@@ -142,7 +144,7 @@ navhead();
         <div class="box">
             <div class="icon"><i style="margin-top:30%;font-size:30px" class="fa fa-user-circle" aria-hidden="true"></i></div>
             <div class="content">
-                <h3>User Infomation</h3>
+                <h3 class="">User Infomation</h3>
                 <h3 class="">Username : <?php echo $_SESSION['username'] ;?></h3>
                 <h3 class="">Role : <?php echo $_SESSION['role'] ;?></h3>
                 <h3 class="">Tier : <?php 
@@ -164,67 +166,21 @@ elseif($_SESSION['tier'] == 'platinum'){
 else{
   echo $_SESSION['tier'] ;
 }
-
-
-
+$sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']." and status in ('shipping', 'new')";
+    $ret = $db->query($sql);
+    $row = $ret->fetchArray(SQLITE3_ASSOC);
+?>
+<a href="order.php"><h3>กำลังดำเนินการอีก <?=$row['count(coid)']?> รายการ</h3></a>
+<?php
+if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){
+  echo ' <a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
+}
 ?>
             
             </div>
         </div>
     </div>
 
-
-
-
-<div class="container-xxl">
-    <div class="row">
-        <div class="col-5 bg-white rounded p-5">
-<h3 class="mb-4">ข้อมูลผู้ใช้</h3>
-<h3 class="mb-4">Username : <?php echo $_SESSION['username'] ;?></h3>
-<h3 class="mb-4">Role : <?php echo $_SESSION['role'] ;?></h3>
-<h3 class="mb-4">Tier : <?php 
-
-
-
-if($_SESSION['tier'] == 'standard'){
-  echo 'No Tier';
-}
-elseif($_SESSION['tier'] == 'silver'){
-  echo 'Silver Tier';
-}
-elseif($_SESSION['tier'] == 'gold'){
-  echo 'Gold Tier';
-}
-elseif($_SESSION['tier'] == 'platinum'){
-  echo 'Platinum Tier';
-}
-else{
-  echo $_SESSION['tier'] ;
-}
-
-
-
-
-?>
-
-</h3>
-
-<?php if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){
-  echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
-} 
-$sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']." and status in ('shipping', 'new')";
-    $ret = $db->query($sql);
-    $row = $ret->fetchArray(SQLITE3_ASSOC);?>
-        </div>
-        <div class="col-7">
-            <div class="row mx-4 mb-4 bg-white rounded p-5">
-                <a href="order.php"><h3>กำลังดำเนินการอีก <?=$row['count(coid)']?> รายการ</h3></a>
-            </div>
-
-        </div>
-    </div>
-</div>
-      </section>
 <?php
 footer();
 ?>
