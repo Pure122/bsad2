@@ -50,7 +50,7 @@ position: relative;
 /* width: calc(400px - 30px);
 height: calc(300px - 30px); */
 width: 500px;
-height: 350px;
+height: 370px;
 background: rgba(0, 0, 0, 0.8);
 /* float: left; */
 margin: 15px;
@@ -125,8 +125,39 @@ border-radius: 10px;
   text-align: center;
   
 }
-.plshelp{
-  align-items: ;
+
+.status {
+    padding: .4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    min-width: 0;
+}
+.status.Platinum {
+    background-color: #43BFA7;
+    color: #006b21;
+    font-weight: bold;
+}
+.status.Gold {
+    background-color: #EBEE4A;
+    color: black !important;
+    font-weight: bold;
+}
+.status.silver {
+    background-color: #ADADAD;
+    color: #006b21;
+    font-weight: bold;
+}
+.status.seller {
+    background-color: #D870E8;
+    color: #006b21;
+    font-weight: bold;
+}
+.status.warehouse {
+    background-color: #F25F47;
+    color: #006b21;
+    font-weight: bold;
 }
     </style>
 </head>
@@ -141,26 +172,38 @@ navhead();
 
 <div class="container">
         <div class="box" style="margin: auto;">
-            <div class="icon"><i style="margin-top:30%;font-size:30px" class="fa fa-user-circle" aria-hidden="true"></i></div>
+            <div class="icon"><i style="margin-top:7%;font-size:70px" class="fa fa-user-circle" aria-hidden="true"></i></div>
             <div class="content" style="margin:auto;text-align:center;">
                 <h3 class="">User Infomation</h3>
                 <h3 class="">Username : <?php echo $_SESSION['username'] ;?></h3>
                 <h3 class="">Role : <?php echo $_SESSION['role'] ;?></h3>
-                <h3 class="">Tier : <?php 
+                 <?php 
 
 
 
 if($_SESSION['tier'] == 'standard'){
-  echo 'No Tier';
+  
+  $roletier = 'Standard';
 }
 elseif($_SESSION['tier'] == 'silver'){
-  echo 'Silver Tier';
+  
+  $roletier = 'Silver';
 }
 elseif($_SESSION['tier'] == 'gold'){
-  echo 'Gold Tier';
+  
+  $roletier = 'Gold';
 }
 elseif($_SESSION['tier'] == 'platinum'){
-  echo 'Platinum Tier';
+  
+  $roletier = 'Platinum';
+}
+elseif($_SESSION['tier'] == 'seller'){
+  
+  $roletier = 'seller';
+}
+elseif($_SESSION['tier'] == 'warehouse'){
+  
+  $roletier = 'warehouse';
 }
 else{
   echo $_SESSION['tier'] ;
@@ -169,6 +212,9 @@ $sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']."
     $ret = $db->query($sql);
     $row = $ret->fetchArray(SQLITE3_ASSOC);
 ?>
+<h3 style="display: inline-block;">Tier : </h3>
+<h3 style="display: inline-block;" class="status <?php echo $roletier; ?>">⠀<?php echo $roletier; ?>⠀</h3>
+
 <a href="order.php"><h3>กำลังดำเนินการอีก <?=$row['count(coid)']?> รายการ</h3></a>
 <?php
 if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){

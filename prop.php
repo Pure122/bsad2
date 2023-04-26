@@ -55,6 +55,16 @@ if(isset($_POST['add'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+<style>
+  .inputqty{
+    border-radius: 20px;
+    width: 80px;
+    text-align: center; 
+  }
+  .desc{
+    border-radius: 20px;
+  }
+</style>
 </head>
 
 <body>
@@ -139,7 +149,7 @@ echo '</div>';
     <div class="col-12">
     <h1 class="text-white"><?=$gameprice?> Baht</h1>
     <form action="" method="POST">
-    <input type="number" name="qty" value="1" max="<?=$gameqt?>">
+    <input class="inputqty" type="number" name="qty" value="1" max="<?=$gameqt?>">
     <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
           <input type="hidden" name="cardid" value="<?=$gamepid?>">
     </form>
@@ -152,8 +162,8 @@ echo '</div>';
     <div class="container-xxl mt-5">
     <h3 class="text-white">Description</h3>
       <div class="row">
-        <div class="col-12 bg-white p-5 rounded">
-          <p><?=$gamedesc?></p>
+        <div class="col-12 bg-white p-5 rounded desc">
+          <p class=""><?=$gamedesc?></p>
         </div>
       </div>
     </div>

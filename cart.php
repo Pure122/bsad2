@@ -41,7 +41,23 @@ if(isset($_POST['remove'])){
   <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
     integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+.addresskub{
+  margin-left: 100px;
+  padding: 20px;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+.textkub{
+  text-decoration: left;
+}
+table{
+  border-radius: 20px;
+}
+  </style>
 </head>
 
 <body>
@@ -60,14 +76,18 @@ if(isset($_POST['remove'])){
             <div class="container-xxl">
                 <div class="row text-center mb-5">
                 <div class="col-7">
+                <br>
+                <br>
+                <br>
                 <h3 class="text-white">Your Cart Item</h3>
-                <table class="table bg-white">
+                
+                <table class="table bg-white" style="padding-bottom: 20px;">
                 <tr>
-                  <th>Product</th>
-                  <th>Name</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                  <th>Remove</th>
+                  <th style="background-color: #1abc9c; border-radius: 20px 0px 0px 0px">Product</th>
+                  <th style="background-color: #1abc9c;">Name</th>
+                  <th style="background-color: #1abc9c;">Quantity</th>
+                  <th style="background-color: #1abc9c;">Price</th>
+                  <th style="background-color: #1abc9c;border-radius: 0px 20px 0px 0px">Remove</th>
                 </tr>';
             $sql = "SELECT * from Products";
             $ret = $db->query($sql);
@@ -86,7 +106,7 @@ if(isset($_POST['remove'])){
                           <tr>
                           <td style="width:5%;"><img src="'.$row['Prod_Mainpic'].'" class="img-fluid"></td>
                           <td>'.$row['Prod_Name'].'</td>
-                          <td>'.$value['qty'].'</td>
+                          <td style="text-align:center;">'.$value['qty'].'</td>
                           <td>'.number_format($nowprice,2).'</td>
                           <td><form action="cart.php?action=remove&id='.$row['ProdID'].'" method="post" 
                           class="cart-item"><button type="submit" name="remove" class="btn btn-danger"><i class="bi bi-trash"></i></button></form></td>
@@ -99,7 +119,7 @@ if(isset($_POST['remove'])){
             
                 echo '<tr>
                 <td colspan="2" style="text-align:right;">Total</td>
-                <td> '.$totalqty.'</td>
+                <td style="text-align:center;"> '.$totalqty.'</td>
                 <td>'.number_format($totalprice,2).'</td>
                 </tr>
                 
@@ -111,32 +131,39 @@ if(isset($_POST['remove'])){
                 </div>
                 </div>
                 <div class="col-5">
-                <h1 class="text-white">Fill in Address</h1>
+                
 
 
 
                 <form action="order.php" method="POST">
+                <h1><i class="text-white fa-sharp fa-solid fa-house-chimney-user fa-bounce"></i></h1><h1 class="text-white">Address</h1>
+        <div class="addresskub">
+        
         <div class="form-outline mb-4">
+            <label for="hnum" class="form-label text-white textkub">House Number</label>
             <input type="text" name="hnum" required="House Number is required" class="form-control">
-            <label for="hnum" class="form-label text-white">House Number</label>
             
-        </div>
+        </div >
         <div class="form-outline mb-4">
-            <input type="text" name="road" required="Road is required" class="form-control">
             <label for="email" class="form-label text-white">Road</label>
+            <input type="text" name="road" required="Road is required" class="form-control">
+            
             
         </div>
         <div class="form-outline mb-4">
-            <input type="text" name="district" required="Subdistrict, District, Province" class="form-control">
             <label for="district" class="form-label text-white">Subdistrict, District, Province</label>
+            <input type="text" name="district" required="Subdistrict, District, Province" class="form-control">
+            
             
         </div>
         <div class="form-outline mb-4">
-            <input type="text" name="postal" required="Postal Code is required" class="form-control" minlength="5">
             <label for="postal" class="form-label text-white">Postal Code</label>
+            <input type="text" name="postal" required="Postal Code is required" class="form-control" minlength="5">
+            
             
         </div>
         <button type="submit" name="createpo" class="btn btn-danger" value="'.$_SESSION['userid'].'">Create Order</button>
+        </div>
     </form>
 
 
