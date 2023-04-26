@@ -113,7 +113,7 @@ session_start();
       <h1 class="text-white my-3">Select status to update</h1>
           <select class="form-select form-select-lg my-1" aria-label=".form-select-lg example" name="selectstatus">
   <option selected value="new">New</option>
-  <option value="in progress">In progress</option>
+  <option value="shipping">Shipping</option>
   <option value="complete">Complete</option>
 </select>
           

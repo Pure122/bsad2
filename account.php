@@ -72,7 +72,7 @@ else{
 <?php if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){
   echo '<a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
 } 
-$sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']." and status in ('in progress', 'new')";
+$sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']." and status in ('shipping', 'new')";
     $ret = $db->query($sql);
     $row = $ret->fetchArray(SQLITE3_ASSOC);?>
         </div>
