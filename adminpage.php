@@ -51,7 +51,7 @@ session_start();
             <th>email</th>
             <th>tier</th>
           </tr>';
-    $query = "SELECT * FROM registersys WHERE role = 'customer'";
+    $query = "SELECT * FROM Users WHERE role = 'customer'";
     $ret = $db->query($query);
     while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
       echo '<tr>
@@ -138,7 +138,7 @@ session_start();
             <th>Status</th>
           </tr>';
 
-          $joinsql = "SELECT co.coid,re.id,re.username,email,date,status FROM customerorder co INNER JOIN registersys re on co.id = re.id";
+          $joinsql = "SELECT co.coid,re.id,re.username,email,date,status FROM customerorder co INNER JOIN Users re on co.id = re.id";
           $result = $db->query($joinsql);
           while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             echo '<tr>
@@ -324,13 +324,13 @@ session_start();
 
   if (isset($_POST['removemember'])) {
     $idremove = $_POST['removemem'];
-    $query = "DELETE FROM registersys WHERE id = '$idremove'";
+    $query = "DELETE FROM Users WHERE id = '$idremove'";
     $db->exec($query);
   }
   if (isset($_POST['updaterole'])) {
     $idup = $_POST['memupdate'];
     $tierup = $_POST['selecttier'];
-    $query = "UPDATE registersys SET tier = '$tierup' WHERE id = '$idup'";
+    $query = "UPDATE Users SET tier = '$tierup' WHERE id = '$idup'";
     $db->exec($query);
   }
   if (isset($_POST['updatestatus'])) {
