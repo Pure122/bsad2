@@ -941,6 +941,7 @@ a:hover {
 </style>
 
 <div class="center col-3 my-4">
+<form action="" method="POST">
   <div class="card">
     <img class="imggame" src="'.$cardpic.'" alt="">
     <div class="card-title">
@@ -949,13 +950,15 @@ a:hover {
     <div class="card-details">
       <button type="submit" name="add">cart</button>
       <input class="boxqty" style="text-align:center;" type="number" name="qty" value="1" max="'.$cardqty.'">
+      <input type="hidden" name="cardid" value="'.$cardid.'">
       <div class="details">
-        <h1>'.$cardname.'</h1>
+        <h1><a href="prop.php?idg='.$cardid.'">'.$cardname.'</a></h1>
         <h2>'.$cardprice.'<span>⠀Baht</span></h2>
         <br>
       </div>
     </div>
   </div>
+  </form>
 </div>';
   
 
