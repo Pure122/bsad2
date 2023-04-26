@@ -242,7 +242,7 @@ session_start();
             </div>
 
         <div class="user-box">
-                <input type="email" name="email" required="Email is required">
+                <input type="text" name="email" required="Email is required">
                 <label>Email</label>
             </div>
         <div class="user-box">
@@ -264,7 +264,7 @@ session_start();
                     ?>
                 </h3>
             </div>
-        <button type='submit' name="register" class='btn button but'>Register
+        <button type='submit' name="login" class='btn button but'>Register
                 <span></span>
                 <span></span>
                 <span></span>

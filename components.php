@@ -31,10 +31,8 @@ nav{
 	/* margin: 270px auto 0; */
 	width: 470px;
 	/* height: 50px; */
-	background: #34495e;
 	border-radius: 8px;
 	font-size: 0;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
 }
 nav a,nav .dropdown{
 	font-size: 15px;
@@ -410,10 +408,10 @@ nav{
 	/* margin: 270px auto 0; */
 	width: 470px;
 	/* height: 50px; */
-	background: #34495e;
+	
 	border-radius: 8px;
 	font-size: 0;
-	box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+	
 }
 nav a,nav .dropdown{
 	font-size: 15px;
@@ -771,7 +769,7 @@ a:hover {
 
 .card{
   border-radius: 10px;
-  background: linear-gradient(180deg, #6dc4ff 0%, #0b40ff 52.08%, #3300ff 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #909090  52.08%, #3B3A3A  100%)
   
 }
 .card{
@@ -789,7 +787,7 @@ a:hover {
   width: 100%;
   height: 100%;
   border-radius: 10px 10px;
-  background: linear-gradient(90deg, rgba(143, 0, 255, 0.7)0%, rgba(91,0,255,0.7)48.44%, rgba(36,0,255,0.7)100%);
+  background: linear-gradient(90deg, rgba(25, 25, 25, 0.7)0%, rgba(71, 71, 71,0.7)48.44%, rgba(144,144,144,0.7)100%);
   box-shadow: inset -4px -4px 20px rgba(255, 255, 255, 0.35), inset 4px 4px 20px rgba(255, 255, 255, 0.35);
   transition: 0.3s ease-in-out;
 }
@@ -945,6 +943,7 @@ a:hover {
   <div class="card">
     <img class="imggame" src="'.$cardpic.'" alt="">
     <div class="card-title">
+    <br>
       <h3>'.$cardname.'</h3>
     </div>
     <div class="card-details">
@@ -952,7 +951,7 @@ a:hover {
       <input class="boxqty" style="text-align:center;" type="number" name="qty" value="1" max="'.$cardqty.'">
       <input type="hidden" name="cardid" value="'.$cardid.'">
       <div class="details">
-        <h1><a href="prop.php?idg='.$cardid.'">'.$cardname.'</a></h1>
+        <h1 style="font-weight: bold;"><a href="prop.php?idg='.$cardid.'">'.$cardname.'</a></h1>
         <h2>'.$cardprice.'<span>⠀Baht</span></h2>
         <br>
       </div>

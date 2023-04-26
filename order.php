@@ -145,9 +145,10 @@ thead th {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #d5d1defe;
+    background-color: #1abc9c;
     cursor: pointer;
     text-transform: capitalize;
+    
 }
 
 tbody tr:nth-child(even) {
@@ -203,7 +204,7 @@ tbody tr.hide td img {
     color: #b30021;
 }
 
-.status.in progress {
+.status.progress {
     background-color: #ebc474;
 }
 
@@ -241,10 +242,12 @@ thead th.active,tbody td.active {
 }
 th{
   text-align: center;
+  color: #727171 ;
 }
 .money{
   text-align: center;
 }
+
   </style>
 </head>
 
@@ -333,11 +336,11 @@ if(isset($_POST['createpo'])){
 
 
                                   <tr>
-                                      <td>'.$row11['coid'].'</td>
+                                      <td style="text-align: center;">'.$row11['coid'].'</td>
                                       <td> <img src="'.$row13['Prod_Mainpic'].'" alt="">'.$row13['Prod_Name'].'</td>
-                                      <td> '.$row12['quantity'].' </td>
+                                      <td style="text-align: center;"> '.$row12['quantity'].' </td>
                                       <td>
-                                          <p class="status .'.$row11['status'].'">'.$row11['status'].'</p>
+                                          <p class="status '.$row11['status'].'">'.$row11['status'].'</p>
                                       </td>
                                       <td class="money"> <strong> '.number_format($orpirce*$orqty,2).' </strong></td>
                                   </tr>
