@@ -51,9 +51,8 @@ position: relative;
 height: calc(300px - 30px); */
 width: 500px;
 height: 350px;
-
 background: rgba(0, 0, 0, 0.8);
-float: left;
+/* float: left; */
 margin: 15px;
 box-sizing: border-box;
 overflow: hidden;
@@ -94,7 +93,7 @@ border-radius: 10px;
 } */
 .container .box .content
 {
-  position: absolute;
+  position: relative;
   top: 100%;
   height: calc(100% - 1000px);
   text-align: start;
@@ -141,9 +140,9 @@ navhead();
 
 
 <div class="container">
-        <div class="box">
+        <div class="box" style="margin: auto;">
             <div class="icon"><i style="margin-top:30%;font-size:30px" class="fa fa-user-circle" aria-hidden="true"></i></div>
-            <div class="content">
+            <div class="content" style="margin:auto;text-align:center;">
                 <h3 class="">User Infomation</h3>
                 <h3 class="">Username : <?php echo $_SESSION['username'] ;?></h3>
                 <h3 class="">Role : <?php echo $_SESSION['role'] ;?></h3>
