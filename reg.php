@@ -176,58 +176,16 @@ session_start();
 
 
     <?php navhead(); ?>
-    <section class="home-wrapper-1 py-5">
-        <div class="container-xxl text-center">
-            <div class="row w-50 m-auto">
-                <div class="col-12">
-                    <div class="header">
-        <h1 class="text-white mb-4">Sign up</h1>
-    </div>
-    <form action="reg_db.php" method="POST">
-        <div class="form-outline mb-4">
-            <input type="text" name="username" required="Username is required" class="form-control">
-            <label for="username" class="form-label text-white">Username</label>
-            
-        </div>
-        <div class="form-outline mb-4">
-            <input type="text" name="email" required="Email is required" class="form-control">
-            <label for="email" class="form-label text-white">Email</label>
-            
-        </div>
-        <div class="form-outline mb-4">
-            <input type="password" name="password" required="Password is required" class="form-control" minlength="8">
-            <label for="password" class="form-label text-white">Password</label>
-            
-        </div>
-        <div class="form-outline mb-4">
-            <input type="password" name="password2" required="Password is required" class="form-control" minlength="8">
-            <label for="password" class="form-label text-white">Confirm Password</label>
-            
-        </div>
-        <div class="error">
-                <h3 class="text-danger mb-4">
-                    <?php
-                    if(isset($_SESSION['error'])){
-                    echo $_SESSION['error'];
-                    unset($_SESSION['error']);
-                    }
-                    ?>
-                </h3>
-            </div>
-        <button type='submit' name="register" class='btn btn-primary btn-block mb-4'>Register</button>
-        <div class="text-center">
-        <p class="text-white">Already a member? <a href="login.php">Sign in</a></p>
-        </div>
-    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     
 
 
 
     <section class="home-wrapper-1 py-5">
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="container-xxl text-center ">
             <div class="row w-50 m-auto">
                 <div class="col-12 login-box">
