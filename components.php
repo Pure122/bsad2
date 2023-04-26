@@ -598,6 +598,48 @@ a:hover span:nth-child(1)
 }
 
 
+/*      search       */
+
+
+.search-box{
+  position: absolute;
+  
+
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.search-btn{
+  color: #e84118;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+.search-txt{
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+
 /*                  */
 
 
@@ -624,6 +666,14 @@ a:hover span:nth-child(1)
       </div>
       </div>
     </nav>
+
+    <div class="search-box">
+        <input class="search-txt" type="text" placeholder="Type to search">
+        <a class="search-btn" href="#">
+            <i class="fas fa-search"></i>
+        </a>
+    </div>
+
     <div style="position: relative;">
   <div style="position: absolute; top: 50%; transform: translateY(-50%); right: 250; bottom: -125px;">
     <p class="text-white text-end mb-0 indexlog">
@@ -722,10 +772,11 @@ a:hover {
 .card{
   border-radius: 10px;
   background: linear-gradient(180deg, #6dc4ff 0%, #0b40ff 52.08%, #3300ff 100%);
+  
 }
 .card{
-  width: 350px;
-  height: 450px;
+  width: 300px;
+  height: 400px;
   background-position: center top;
   background-size: cover;
   overflow: hidden;
@@ -746,7 +797,7 @@ a:hover {
   position: absolute;
   left: 0;
   text-align: center;
-  bottom: 0;
+  bottom: 20;
   width: 100%;
   height: 18%;
   text-transform: uppercase;
@@ -754,12 +805,12 @@ a:hover {
   background: transparent;
 }
 .card-title h3{
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
 }
 .card:hover .card-title{
-  bottom: -75px;
+  bottom: -100px;
 }
 .card:hover .card-details{
   bottom: 0;
@@ -817,7 +868,7 @@ a:hover {
   top: 5%;
   text-transform: uppercase;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   color: #fff;
 }
 .details p{
@@ -838,31 +889,73 @@ a:hover {
   text-align: center;
   width: 100%;
   color: #fff;
+  font-size: 25px;
 }
 .details h2 span{
-  font-size: 30px;
+  font-size: 25px;
 }
+
+
+.card button {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.card-details input[type="number"] {
+  position: absolute;
+  left: 50%;
+  bottom: 115px;
+  transform: translateX(-50%);
+}
+
+.card button {
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 42.5px); /* กำหนดให้ปุ่มอยู่ตรงกลางของ Card */
+  transform: translateX(0);
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.imggame {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.boxqty
+{
+  border-radius: 6px;
+  border: none;
+}
+
 </style>
 
-<div class="center col-4 my-4">
-<div class="card">
-    <img src="'.$cardpic.'" alt="">
+<div class="center col-3 my-4">
+  <div class="card">
+    <img class="imggame" src="'.$cardpic.'" alt="">
     <div class="card-title">
-        <h3>'.$cardname.'</h3>
+      <h3>'.$cardname.'</h3>
     </div>
     <div class="card-details">
-  
-        <button>cart</button>
-
-        <div class="details">
-            <h1>'.$cardname.'</h1>
-            
-            <h2>'.$cardprice.'<span>⠀Baht</span></h2>
-            <br>
-            <input type="number" name="qty" value="1" max="'.$cardqty.'">
-        </div>
+      <button type="submit" name="add">cart</button>
+      <input class="boxqty" style="text-align:center;" type="number" name="qty" value="1" max="'.$cardqty.'">
+      <div class="details">
+        <h1>'.$cardname.'</h1>
+        <h2>'.$cardprice.'<span>⠀Baht</span></h2>
+        <br>
+      </div>
     </div>
-</div>
+  </div>
 </div>';
   
 

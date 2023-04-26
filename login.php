@@ -168,7 +168,7 @@ session_start();
 }
 .but{
     background-color: transparent;
-    border: none;"
+    border: none;
 }
     </style>
 </head>
@@ -183,33 +183,16 @@ session_start();
     </div>
     <form action="login_db.php" method="POST" >
         
-        <!-- <div class="form-outline mb-4 mx-auto" style="max-width: 250px;">
-            <label class="form-label text-white" for="username">Username</label>
-            <input type="text" name="username" required="Username is required" class="form-control">
-            
-        </div> -->
-        <!--  -->
         <div class="user-box">
-                <input type="text" name="username" required="" class="boxcol">
+                <input type="text" name="username" required="" class="">
                 <label>Username</label>
             </div>
-        <!--  -->
 
         <div class="user-box">
                 <input type="password" name="password" required="">
                 <label>Password</label>
             </div>
 
-        <!--  -->
-
-        <!-- <div class="form-outline mb-4 mx-auto"style="max-width: 250px;">
-            <label for="password" class="form-label text-white">Password</label>
-            <input type="password" name="password" required="Password is required" class="form-control">
-            
-        </div> -->
-
-        
-        
             <div class="error">
                 <h3 class="text-danger mb-4">
                     <?php
