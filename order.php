@@ -333,8 +333,37 @@ if(isset($_POST['createpo'])){
                           <td>'.$row12['quantity'].'</td>
                           <td>'.$row11['status'].'</td>
                           <td>'.number_format($orpirce*$orqty,2).'</td>
-                          
                           </tr>
+
+
+                          <section class="table__body">
+                          <table>
+                              <thead>
+                                  <tr>
+                                      <th> Order ID </th>
+                                      <th> Product </th>
+                                      <th> Total Quantity </th>
+                                      <th> Status </th>
+                                      <th> Amount </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>'.$row11['coid'].'</td>
+                                      <td> <img src="'.$row13['Prod_Mainpic'].'" alt="">'.$row13['Prod_Name'].'</td>
+                                      <td> '.$row12['quantity'].' </td>
+                                      <td>
+                                          <p class="status .'.$row11['status'].'">'.$row11['status'].'</p>
+                                      </td>
+                                      <td class="money"> <strong> '.number_format($orpirce*$orqty,2).' </strong></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </section>
+
+
+
+
                           ';
                             }
                         }
@@ -342,37 +371,6 @@ if(isset($_POST['createpo'])){
                     }echo '</table>';
                     
                     //
-
-                    while($row11 = $ret11->fetchArray(SQLITE3_ASSOC)){
-                    echo'
-                    <section class="table__body">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th> Order ID </th>
-                                <th> Product </th>
-                                <th> Total Quantity </th>
-                                <th> Order Date </th>
-                                <th> Status </th>
-                                <th> Amount </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>'.$row11['coid'].'</td>
-                                <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Zinzu Chan Lee</td>
-                                <td> </td>
-                                <td> 17 Dec, 2022 </td>
-                                <td>
-                                    <p class="status delivered">Delivered</p>
-                                </td>
-                                <td class="money"> <strong> $128.90 </strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                    ';
-                    }
 
 
                     //
