@@ -159,6 +159,11 @@ border-radius: 10px;
     color: #006b21;
     font-weight: bold;
 }
+.status.standard {
+    background-color: #8A745F;
+    color: #006b21;
+    font-weight: bold;
+}
     </style>
 </head>
 
