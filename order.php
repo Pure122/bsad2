@@ -301,15 +301,18 @@ if(isset($_POST['createpo'])){
                             <h1 class="text-white">You Have No Order</h1>
                             </div>';
                         }
-                        echo '<table class="table bg-white">
-                        <tr>
-                          <th>Product</th>
-                          <th>OrderID</th>
-                          <th>Name</th>
-                          <th>Total Quantity</th>
-                          <th>Status</th>
-                          <th>Price</th>
-                        </tr>';
+                        echo '<section class="table__body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Order ID </th>
+                                    <th> Product </th>
+                                    <th> Total Quantity </th>
+                                    <th> Status </th>
+                                    <th> Amount </th>
+                                </tr>
+                            </thead>
+                            <tbody>';
                     while($row11 = $ret11->fetchArray(SQLITE3_ASSOC)){
                         
                         $sql12 = "SELECT * FROM customerorder_product where copid = ".($row11['coid'])." ";
@@ -326,28 +329,9 @@ if(isset($_POST['createpo'])){
                                 $orpirce = (int)$row13['Prod_Price'];
                                 $orqty = (int)$row12['quantity'];
                                 echo '
-                          <tr>
-                          <td style="width:5%;"><img src="'.$row13['Prod_Mainpic'].'" class="img-fluid"></td>
-                          <td>'.$row11['coid'].'</td>
-                          <td>'.$row13['Prod_Name'].'</td>
-                          <td>'.$row12['quantity'].'</td>
-                          <td>'.$row11['status'].'</td>
-                          <td>'.number_format($orpirce*$orqty,2).'</td>
-                          </tr>
+   
 
 
-                          <section class="table__body">
-                          <table>
-                              <thead>
-                                  <tr>
-                                      <th> Order ID </th>
-                                      <th> Product </th>
-                                      <th> Total Quantity </th>
-                                      <th> Status </th>
-                                      <th> Amount </th>
-                                  </tr>
-                              </thead>
-                              <tbody>
                                   <tr>
                                       <td>'.$row11['coid'].'</td>
                                       <td> <img src="'.$row13['Prod_Mainpic'].'" alt="">'.$row13['Prod_Name'].'</td>
@@ -357,9 +341,7 @@ if(isset($_POST['createpo'])){
                                       </td>
                                       <td class="money"> <strong> '.number_format($orpirce*$orqty,2).' </strong></td>
                                   </tr>
-                              </tbody>
-                          </table>
-                      </section>
+                             
 
 
 
@@ -368,7 +350,9 @@ if(isset($_POST['createpo'])){
                             }
                         }
             
-                    }echo '</table>';
+                    }echo ' </tbody>
+                    </table>
+                </section>';
                     
                     //
 
