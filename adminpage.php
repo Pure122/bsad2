@@ -191,20 +191,20 @@ session_start();
        <form action="upload.php" method="POST" enctype="multipart/form-data">
        <div class="row mb-5">
       <div class="col-4">
-      <h3 class="text-white">Upload new Product</h3>
+      <h3 class="text-white">Upload new Product pictures</h3>
       <div class="form-outline my-2">
           <input type="file" name="mainpic" required="required" class="form-control" accept="image/png, image/jpg, image/jpeg">
-          <label for="mainpic" class="form-label text-white">Main Picture</label>
+          <label for="mainpic" class="form-label text-white">Main Picture <span class="text-danger">Note: Only 1 Picture can be upload</span></label>
       </div>
       <div class="form-outline my-2">
           <input type="file" name="inpic[]" required="required" class="form-control" accept="image/png, image/jpg, image/jpeg" multiple="multiple">
-          <label for="inpic" class="form-label text-white">Picture Inside</label>
+          <label for="inpic" class="form-label text-white">Picture Inside <span class="text-danger">Note: Only 3 Picture can be upload</span></label>
       </div>
       <p class="text-white">Note : Only Jpeg, Jpg, Png File are allowed</p>
       <button type="submit" name="newpro" class="btn btn-success btn-block">Upload</button>
       </div>
       <div class="col-6">
-      <h3 class="text-white">Hi</h3>
+      <h3 class="text-white">Upload new Product</h3>
          
         <div class="form-outline mb-2">
             <input type="text" name="newproid" required="Username is required" class="form-control" placeholder="ID">
