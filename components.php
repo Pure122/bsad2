@@ -676,24 +676,20 @@ function footer(){
 <footer class='py-4'>
   <div class='container-xxl'>
     <div class='row'>
-      <div class='col-3'>
+      <div class='col-6 text-center'>
         <h4 class='text-white mb-4'>Contact us</h4>
         <p class='text-white'>dheepapol@hotmail.com</p>
         <p class='text-white'>Tel +66 926957100</p>
         <div></div>
       </div>
-      <div class='col-3'>
-        <h4 class='text-white mb-4'>Inform</h4>
+      <div class='col-6 text-center'>
+        <h4 class='text-white mb-4'>Social</h4>
+        <a href='https://www.facebook.com/dheepapol.sutthiphunt'><i class='bi bi-facebook text-white h2 mx-2'></i></a>
+        <a href='https://www.instagram.com/dholpapee/'><i class='bi bi-instagram text-white h2 mx-2'></i></a>
+
         <div></div>
       </div>
-      <div class='col-3'>
-        <h4 class='text-white mb-4'>Account</h4>
-        <div></div>
-      </div>
-      <div class='col-3'>
-        <h4 class='text-white mb-4'>Links</h4>
-        <div></div>
-      </div>
+
     </div>
   </div>
 </footer>
@@ -701,7 +697,7 @@ function footer(){
   <div class='container-xxl'>
     <div class='row'>
       <div class='col-12'>
-        <p class='text-center mb-0 text-white'>&copy ; 2023; Powered by Pure</p>
+        <p class='text-center mb-0 text-white'>&copy ; 2023; Powered by G.5</p>
       </div>
     </div>
   </div>
@@ -900,7 +896,7 @@ a:hover {
     </div>
     <div class="card-details">
       <button type="submit" name="add">cart</button>
-      <input class="boxqty" style="text-align:center;" type="number" name="qty" value="1" max="'.$cardqty.'">
+      <input class="boxqty form-control w-50" style="text-align:center;" type="number" name="qty" value="1" max="'.$cardqty.'" min="1">
       <input type="hidden" name="cardid" value="'.$cardid.'">
       <div class="details">
         <h1 style="font-weight: bold;"><a href="prop.php?idg='.$cardid.'">'.$cardname.'</a></h1>

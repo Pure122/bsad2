@@ -149,7 +149,7 @@ echo '</div>';
     <div class="col-12">
     <h1 class="text-white"><?=$gameprice?> Baht</h1>
     <form action="" method="POST">
-    <input class="inputqty" type="number" name="qty" value="1" max="<?=$gameqt?>">
+    <input class="inputqty form-control" type="number" name="qty" value="1" max="<?=$gameqt?>" min="1">
     <button type="submit" class="btn btn-warning mt-2" name="add">Add to Cart<i class="bi bi-cart-fill"></i></button>
           <input type="hidden" name="cardid" value="<?=$gamepid?>">
     </form>
