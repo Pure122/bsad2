@@ -24,7 +24,7 @@ session_start();
         
 
 .login-box{
-    margin-top: 30%;
+    margin-top: 40%;
     position: relative;
     top: 50%;
     left: 50%;

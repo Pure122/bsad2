@@ -21,7 +21,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <style>
 .login-box{
-    margin-top: 30%;
+    margin-top: 40%;
     position: relative;
     top: 50%;
     left: 50%;
