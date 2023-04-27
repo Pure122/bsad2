@@ -684,8 +684,8 @@ function footer(){
       </div>
       <div class='col-6 text-center'>
         <h4 class='text-white mb-4'>Social</h4>
-        <a href='https://www.facebook.com/dheepapol.sutthiphunt'><i class='bi bi-facebook text-white h2 mx-2'></i></a>
-        <a href='https://www.instagram.com/dholpapee/'><i class='bi bi-instagram text-white h2 mx-2'></i></a>
+        <a target = '_blank' href='https://www.facebook.com/dheepapol.sutthiphunt'><i class='bi bi-facebook text-white h2 mx-2'></i></a>
+        <a target = '_blank' href='https://www.instagram.com/dholpapee/'><i class='bi bi-instagram text-white h2 mx-2'></i></a>
 
         <div></div>
       </div>
