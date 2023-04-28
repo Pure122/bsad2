@@ -222,8 +222,13 @@ $sql = "SELECT count(coid) FROM customerorder WHERE id = ".$_SESSION['userid']."
 
 <a href="order.php"><h3>กำลังดำเนินการอีก <?=$row['count(coid)']?> รายการ</h3></a>
 <?php
-if ($_SESSION['role'] == 'seller' or $_SESSION['role'] == 'warehouse'){
-  echo ' <a href="adminpage.php" class="btn btn-primary btn-block mb-4">Manage Data</a>';
+if ($_SESSION['role'] == 'seller'){
+  echo ' <a href="admincustomer.php" class="btn btn-primary btn-block mb-4">Customer Data</a>
+  <a href="adminorder.php" class="btn btn-primary btn-block mb-4">Order Data</a>';
+}
+else if($_SESSION['role'] == 'warehouse'){
+  echo ' <a href="adminwarehousenew.php" class="btn btn-primary btn-block mb-4">New Product Data</a>
+  <a href="adminwarehouseupdate.php" class="btn btn-primary btn-block mb-4">Update Product Data</a>';
 }
 ?>
             
